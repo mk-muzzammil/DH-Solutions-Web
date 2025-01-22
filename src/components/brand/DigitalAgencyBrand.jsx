@@ -113,7 +113,79 @@ const DigitalAgencyBrand = () => {
                     alt="Brand Logo"
                   />
                 </div>
-                {/* ...repeat for other brand items... */}
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand4}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand5}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand6}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand7}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand8}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand9}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand10}
+                    alt="Brand Logo"
+                  />
+                </div>
+                <div className="brand__item fade_bottom">
+                  <Image
+                    priority
+                    width={114}
+                    height={64}
+                    src={Brand11}
+                    alt="Brand Logo"
+                  />
+                </div>
+
                 <div className="brand__item fade_bottom">
                   <Image
                     priority

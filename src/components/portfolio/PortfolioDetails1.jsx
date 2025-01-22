@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Detail1 from "../../../public/assets/imgs/portfolio/detail/1.jpg";
 import Detail2 from "../../../public/assets/imgs/portfolio/detail/2.jpg";
@@ -10,25 +11,27 @@ import DetailShape from "../../../public/assets/imgs/portfolio/detail/shape.png"
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import animationCharCome from "@/lib/utils/animationCharCome";
+import { useTranslations } from "next-intl";
 
 const PortfolioDetails1 = () => {
+  const t = useTranslations();
   const charAnim = useRef();
+
   useEffect(() => {
     animationCharCome(charAnim.current);
   }, []);
+
   return (
     <>
       <section className="portfolio__detail">
         <div className="portfolio__detail-top">
           <div className="container g-0 line pt-110 pb-130">
             <span className="line-3"></span>
-
             <div className="row">
               <div className="col-xxl-8 col-xl-8 col-lg-7 col-md-7">
                 <div className="sec-title-wrapper">
                   <h2 className="sec-title animation__char_come" ref={charAnim}>
-                    Lionpro- <br />
-                    Agency
+                    {t("portDetailHeading")}
                   </h2>
                 </div>
               </div>
@@ -37,16 +40,22 @@ const PortfolioDetails1 = () => {
                 <div className="portfolio__detail-info">
                   <ul>
                     <li>
-                      Category <Link href="/category">Development</Link>
+                      {t("portDetailCategory")}{" "}
+                      <Link href="/category">
+                        {t("portDetailCategoryValue")}
+                      </Link>
                     </li>
                     <li>
-                      Client <span>Webflow</span>
+                      {t("portDetailClient")}{" "}
+                      <span>{t("portDetailClientValue")}</span>
                     </li>
                     <li>
-                      Start Date <span>23 January 2021</span>
+                      {t("portDetailStartDate")}{" "}
+                      <span>{t("portDetailStartValue")}</span>
                     </li>
                     <li>
-                      Handover <span>05 March 2021</span>
+                      {t("portDetailEndDate")}{" "}
+                      <span>{t("portDetailEndValue")}</span>
                     </li>
                   </ul>
                 </div>
@@ -73,28 +82,18 @@ const PortfolioDetails1 = () => {
               <div className="row">
                 <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
                   <h2 className="portfolio__detail-title title-anim">
-                    Build, streamline and evolve together with solution
+                    {t("portDetailSubHeading1")}
                   </h2>
                 </div>
-
                 <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
                   <div className="portfolio__detail-text">
-                    <p>
-                      Always ready to push the boundaries, especially when it
-                      comes to our own platform, Our analytical eye to create a
-                      site that was visually engaging and also optimised for
-                      maximum performance. It also perfectly reflects the
-                      journey to help it tell a story to increase its
-                      understanding and drive action. To create a site that was
-                      visually engaging for maximum performance.
-                    </p>
-
+                    <p>{t("portDetailPara1")}</p>
                     <ul>
-                      <li>+ Brand Development</li>
-                      <li>+ UX/UI Design</li>
-                      <li>+ Front-end Development</li>
-                      <li>+ Copywriting</li>
-                      <li>+ Shopify Development</li>
+                      <li>{t("portDetailList1")}</li>
+                      <li>{t("portDetailList2")}</li>
+                      <li>{t("portDetailList3")}</li>
+                      <li>{t("portDetailList4")}</li>
+                      <li>{t("portDetailList5")}</li>
                     </ul>
                   </div>
                 </div>
@@ -115,21 +114,12 @@ const PortfolioDetails1 = () => {
               <div className="row">
                 <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
                   <h2 className="portfolio__detail-title title-anim">
-                    Visual and typograpy hierarchy
+                    {t("portDetailSubHeading2")}
                   </h2>
                 </div>
-
                 <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
                   <div className="portfolio__detail-text">
-                    <p>
-                      Visual hierarchy is the principle of arranging elements to
-                      show their order of importance. Designers structure visual
-                      characteristics—e.g., menu icons—so users can understand
-                      information easily. By laying out elements logically and
-                      strategically, designers influence users’ perceptions and
-                      guide them to desired actions. Users notice larger
-                      elements more easily can convert.
-                    </p>
+                    <p>{t("portDetailPara2")}</p>
 
                     <div className="fonts">
                       <Image
@@ -140,16 +130,16 @@ const PortfolioDetails1 = () => {
                       />
                       <ul>
                         <li className="regular">
-                          <span>regular</span> This is text message
+                          <span>regular</span> {t("portDetailFontRegular")}
                         </li>
                         <li className="medium">
-                          <span>Medium</span> Medium typography
+                          <span>Medium</span> {t("portDetailFontMedium")}
                         </li>
                         <li className="semibold">
-                          <span>SemiBold</span> Just Amazing
+                          <span>SemiBold</span> {t("portDetailFontSemiBold")}
                         </li>
                         <li className="blod">
-                          <span>Blod</span> Awesome
+                          <span>Bold</span> {t("portDetailFontBold")}
                         </li>
                       </ul>
                     </div>
@@ -198,11 +188,7 @@ const PortfolioDetails1 = () => {
                 src={Detail7}
                 alt="Portfolio Image"
               />
-              <p>
-                For those of us who are blessed with good sight. So we seldom
-                consider it. That’s why going off to investigate the whys and
-                hows involved is a little like trying to get behind the wind{" "}
-              </p>
+              <p>{t("portDetailPara3")}</p>
             </div>
 
             <div className="row">
@@ -212,13 +198,13 @@ const PortfolioDetails1 = () => {
                     href="/portfolio-details"
                     className="wc-btn-primary btn-hover"
                   >
-                    <span></span> Prev Work
+                    <span></span> {t("portDetailPrevBtn")}
                   </Link>
                   <Link
                     href="/portfolio-details"
                     className="wc-btn-primary btn-hover"
                   >
-                    <span></span> Next Work
+                    <span></span> {t("portDetailNextBtn")}
                   </Link>
                 </div>
               </div>

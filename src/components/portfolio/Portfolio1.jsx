@@ -192,7 +192,9 @@ const Portfolio1 = () => {
                           data-speed="0.4"
                         />
                         <div className="portfolio__content-6">
-                          <h4 className="portfolio__title-6">DUBAI DUTY FREE</h4>
+                          <h4 className="portfolio__title-6">
+                            DUBAI DUTY FREE
+                          </h4>
                           <h5 className="portfolio__date">2024</h5>
                         </div>
                       </Link>
@@ -209,7 +211,9 @@ const Portfolio1 = () => {
                           data-speed="0.4"
                         />
                         <div className="portfolio__content-6">
-                          <h4 className="portfolio__title-6">MENA DISTRIBUTORS</h4>
+                          <h4 className="portfolio__title-6">
+                            MENA DISTRIBUTORS
+                          </h4>
                           <h5 className="portfolio__date">2024</h5>
                         </div>
                       </Link>

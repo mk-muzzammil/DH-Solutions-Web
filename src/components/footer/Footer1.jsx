@@ -1,16 +1,19 @@
+"use client";
 import Link from "next/link";
 import ThumbFooter from "../../../public/assets/imgs/thumb/footer.jpg";
 import FooterLogoWhite from "../../../public/assets/imgs/logo/footer-logo-white.png";
 import footer from "../../../public/assets/imgs/footer/footer.jpg";
 import Image from "next/image";
+import { useTranslations } from "use-intl";
 
 export default function Footer3() {
+  const t = useTranslations();
+
   return (
     <>
       <footer className="footer__area">
         <div className="footer__top">
           <div className="container footer-line"></div>
-
           <Image
             priority
             width={1160}
@@ -34,10 +37,7 @@ export default function Footer3() {
                       src={FooterLogoWhite}
                       alt="Footer Logo"
                     />
-                    <p>
-                      When do they work well, and when do they on us and
-                      finally, when do we actually need how can we avoid them.
-                    </p>
+                    <p>{t("footerAboutDesc")}</p>
                     <ul className="footer__social">
                       <li>
                         <a href="https://www.facebook.com/dhsolutions.official/">
@@ -46,7 +46,6 @@ export default function Footer3() {
                           </span>
                         </a>
                       </li>
-
                       <li>
                         <a href="https://www.instagram.com/dhsolutions.official/">
                           <span>
@@ -65,28 +64,32 @@ export default function Footer3() {
                   </div>
 
                   <div className="footer__widget-2">
-                    <h2 className="footer__widget-title">Information</h2>
+                    <h2 className="footer__widget-title">
+                      {t("footerInfoTitle")}
+                    </h2>
                     <ul className="footer__link">
                       <li>
-                        <Link href="/about">About Company</Link>
+                        <Link href="/about">{t("aboutCompany")}</Link>
                       </li>
                       <li>
-                        <Link href="/portfolio">Case Study</Link>
+                        <Link href="/portfolio">{t("caseStudy")}</Link>
                       </li>
                       <li>
-                        <Link href="/career">Career</Link>
+                        <Link href="/career">{t("navCareers")}</Link>
                       </li>
                       <li>
-                        <Link href="/blog">blog</Link>
+                        <Link href="/blog">{t("navBlog")}</Link>
                       </li>
                       <li>
-                        <Link href="/contact">contact</Link>
+                        <Link href="/contact">{t("navContact")}</Link>
                       </li>
                     </ul>
                   </div>
 
                   <div className="footer__widget-3">
-                    <h2 className="footer__widget-title">Contact Us</h2>
+                    <h2 className="footer__widget-title">
+                      {t("footerContactTitle")}
+                    </h2>
                     <ul className="footer__contact">
                       <li>1309 Coffeen Ave. Sheridan, Wyoming , USA 82801</li>
                       <li>
@@ -101,43 +104,28 @@ export default function Footer3() {
                   </div>
 
                   <div className="footer__widget-4">
-                    <h2 className="project-title">
-                      Have a project in your mind?
-                    </h2>
+                    <h2 className="project-title">{t("footerProjTitle")}</h2>
                     <div className="btn_wrapper">
                       <Link
                         href="/contact"
                         className="wc-btn-primary btn-hover btn-item"
                       >
-                        <span></span> contact us{" "}
+                        <span></span> {t("footerProjBtn")}{" "}
                         <i className="fa-solid fa-arrow-right"></i>
                       </Link>
                     </div>
-                    <h3 className="contact-time">09 : 00 AM - 10 : 30 PM</h3>
-                    <h4 className="contact-day">Monday - Friday</h4>
+                    <h3 className="contact-time">{t("footerTimeRange")}</h3>
+                    <h4 className="contact-day">{t("footerWorkingDays")}</h4>
                   </div>
 
                   <div className="footer__copyright">
                     <p>
-                      © 2022 - 2025 | Alrights reserved by{" "}
-                      <a href="https:/dhsol.net/" target="_blank">
-                        DH Solutions LLC
+                      {t("footerCopyRight")}{" "}
+                      <a href="https://dhsol.net/" target="_blank">
+                        {t("footerCopyLinkName")}
                       </a>
                     </p>
                   </div>
-                  {/* 
-                  <div className="footer__subscribe">
-                    <form action="#">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                      />
-                      <button type="submit" className="subs-btn">
-                        <i className="fa-solid fa-paper-plane"></i>
-                      </button>
-                    </form>
-                  </div> */}
                 </div>
               </div>
             </div>

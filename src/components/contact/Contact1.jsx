@@ -1,6 +1,8 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import animationCharCome from "@/lib/utils/animationCharCome";
 import animationWordCome from "@/lib/utils/animationWordCome";
+import { useTranslations } from "use-intl";
 
 const Contact1 = () => {
   const charAnim = useRef(null);
@@ -8,7 +10,9 @@ const Contact1 = () => {
   const [status, setStatus] = useState(null); // State to manage success/error message
   const [selectedService, setSelectedService] = useState(""); // State for dropdown
 
-  // Array of services
+  const t = useTranslations(); // or from 'next-intl'
+
+  // Array of services (still in English or add to i18n if desired)
   const services = [
     "Web Development",
     "Mobile App Development",
@@ -41,20 +45,20 @@ const Contact1 = () => {
       });
 
       if (response.ok) {
-        setStatus({ type: "success", message: "Email sent successfully!" });
-        e.target.reset(); // Reset the form on success
-        setSelectedService(""); // Reset the dropdown
+        setStatus({ type: "success", message: t("contactSuccess") });
+        e.target.reset();
+        setSelectedService("");
       } else {
         const result = await response.json();
         setStatus({
           type: "error",
-          message: result.message || "Failed to send email. Please try again.",
+          message: result.message || t("contactFail"),
         });
       }
     } catch (error) {
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again.",
+        message: t("contactErrorGeneric"),
       });
     }
 
@@ -70,16 +74,13 @@ const Contact1 = () => {
           <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
             <div className="sec-title-wrapper">
               <h2 className="sec-title-2 animation__char_come" ref={charAnim}>
-                Lets get in touch
+                {t("contactTitle")}
               </h2>
             </div>
           </div>
           <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
             <div className="contact__text">
-              <p>
-                Great! We are excited to hear from you. Lets start something
-                special together. Call us for any inquiry.
-              </p>
+              <p>{t("contactDesc")}</p>
             </div>
           </div>
         </div>
@@ -90,9 +91,7 @@ const Contact1 = () => {
                 className="sub-title-anim-top animation__word_come"
                 ref={wordAnim}
               >
-                {"Dont be afraid, man!"}
-                <br />
-                say hello
+                {t("contactDontBeAfraid")}
               </h3>
               <ul>
                 <li>
@@ -117,7 +116,7 @@ const Contact1 = () => {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Name *"
+                      placeholder={t("contactNamePlaceholder")}
                       required
                     />
                   </div>
@@ -125,20 +124,24 @@ const Contact1 = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email *"
+                      placeholder={t("contactEmailPlaceholder")}
                       required
                     />
                   </div>
                 </div>
                 <div className="row g-3">
                   <div className="col-xxl-6 col-xl-6 col-12">
-                    <input type="tel" name="phone" placeholder="Phone" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder={t("contactPhonePlaceholder")}
+                    />
                   </div>
                   <div className="col-xxl-6 col-xl-6 col-12">
                     <input
                       type="text"
                       name="subject"
-                      placeholder="Subject *"
+                      placeholder={t("contactSubjectPlaceholder")}
                       required
                     />
                   </div>
@@ -148,7 +151,7 @@ const Contact1 = () => {
                     <input
                       type="text"
                       name="company"
-                      placeholder="Company Name"
+                      placeholder={t("contactCompanyPlaceholder")}
                     />
                   </div>
                   <div className="col-xxl-6 col-xl-6 col-12">
@@ -158,15 +161,15 @@ const Contact1 = () => {
                       onChange={(e) => setSelectedService(e.target.value)}
                       required
                       style={{
-                        width: "100%", // Ensures the dropdown takes full width
-                        padding: "12px", // Matches the input field height
-                        fontSize: "16px", // Matches font size of input fields
-                        borderRadius: "5px", // Ensures rounded corners
-                        border: "1px solid #ccc", // Adds border similar to input fields
+                        width: "100%",
+                        padding: "12px",
+                        fontSize: "16px",
+                        borderRadius: "5px",
+                        border: "1px solid #ccc",
                       }}
                     >
                       <option value="" disabled>
-                        Select a service *
+                        {t("contactServicePlaceholder")}
                       </option>
                       {services.map((service, index) => (
                         <option key={index} value={service}>
@@ -180,7 +183,7 @@ const Contact1 = () => {
                   <div className="col-12">
                     <textarea
                       name="message"
-                      placeholder="Messages *"
+                      placeholder={t("contactMessagePlaceholder")}
                       required
                     ></textarea>
                   </div>
@@ -192,8 +195,8 @@ const Contact1 = () => {
                         type="submit"
                         className="wc-btn-primary btn-hover btn-item"
                       >
-                        <span></span> Send <br />
-                        Messages <i className="fa-solid fa-arrow-right"></i>
+                        <span></span> {t("contactSendBtn")}{" "}
+                        <i className="fa-solid fa-arrow-right"></i>
                       </button>
                     </div>
                   </div>

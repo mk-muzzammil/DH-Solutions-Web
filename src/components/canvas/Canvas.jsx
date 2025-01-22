@@ -1,4 +1,5 @@
-import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
+"use client";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -6,23 +7,28 @@ import logoWhite2 from "../../../public/assets/imgs/logo/site-logo-white-2.png";
 import Shape11 from "../../../public/assets/imgs/shape/11.png";
 import Shape12 from "../../../public/assets/imgs/shape/12.png";
 import Image from "next/image";
+import { useTranslations } from "use-intl";
 
 const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
   const [accordion, setAccordion] = useState(0);
   const [subAccordion, setSubAccordion] = useState(0);
   const headerTitle = useRef();
+
+  const t = useTranslations();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setTimeout(() => {
-        let rootParent = headerTitle.current.children;
+        let rootParent = headerTitle.current?.children;
+        if (!rootParent) return;
         for (let i = 0; i < rootParent.length; i++) {
           let firstParent = rootParent[i].children;
           for (let j = 0; j < firstParent.length; j++) {
-            if (firstParent[j].className.includes("header_title")) {
+            if (firstParent[j].className?.includes("header_title")) {
               let arr = firstParent[j].children[0].textContent.split("");
               let spanData = "";
               for (let k = 0; k < arr.length; k++) {
-                if (arr[k] == " ") {
+                if (arr[k] === " ") {
                   spanData += `<span style='width:2vw;'>${arr[k]}</span>`;
                 } else {
                   spanData += `<span>${arr[k]}</span>`;
@@ -36,6 +42,7 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
       }, 10);
     }
   }, []);
+
   const openData = (data) => {
     setAccordion(data);
   };
@@ -66,7 +73,7 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
               </Link>
             </div>
             <div className="offcanvas__social" style={{ paddingTop: "135px" }}>
-              <h3 className="social-title">Follow Us</h3>
+              <h3 className="social-title">{t("canvasFollowUs")}</h3>
               <ul>
                 <li>
                   <a href="https://www.instagram.com/dhsolutions.official/">
@@ -95,35 +102,35 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
                 <ul className="menu-anim title" ref={headerTitle}>
                   <li>
                     <div className="header_title">
-                      <Link href={"/home"}>HOME</Link>
+                      <Link href={"/home"}>{t("navHome")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/about"}>ABOUT</Link>
+                      <Link href={"/about"}>{t("navAbout")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/service-v5"}>SERVICES</Link>
+                      <Link href={"/service-v5"}>{t("navServices")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/portfolio"}>PORTFOLIO</Link>
+                      <Link href={"/portfolio"}>{t("navPortfolio")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/team"}>TEAM</Link>
+                      <Link href={"/team"}>{t("navTeam")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/career"}>CAREERS</Link>
+                      <Link href={"/career"}>{t("navCareers")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/blog"}>BLOG</Link>
+                      <Link href={"/blog"}>{t("navBlog")}</Link>
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/contact"}>CONTACT</Link>
+                      <Link href={"/contact"}>{t("navContact")}</Link>
                     </div>
                   </li>
                 </ul>
@@ -131,14 +138,6 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
             </div>
           </div>
           <div className="offcanvas__right">
-            {/* <div className="offcanvas__search"> */}
-            {/* <form action="#"> */}
-            {/* <input type="text" name="search" placeholder="Search keyword" />
-                <button>
-                  <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
-                </button> */}
-            {/* </form> */}
-            {/* </div> */}
             <div
               className="offcanvas__contact"
               style={{
@@ -148,7 +147,7 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
                 justifyContent: "center",
               }}
             >
-              <h3>Get in touch</h3>
+              <h3>{t("canvasGetInTouch")}</h3>
               <ul>
                 <li>
                   <a href="https://wa.me/19255589107">(+1) 925 558 9107</a>
@@ -156,7 +155,7 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
                 <li>
                   <a href="mailto:hello@dhsol.net">hello@dhsol.net</a>
                 </li>
-                <li>1309 Coffeen Ave. Sheridan, Wyoming , USA 82801</li>
+                <li>{t("canvasAddress")}</li>
               </ul>
             </div>
             <Image
@@ -176,7 +175,7 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
           </div>
           <div className="offcanvas__close">
             <button type="button" onClick={closeCanvas}>
-              <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>
         </div>

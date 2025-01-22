@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
-import Image from "next/image"; // Import Next.js Image component
+import Image from "next/image";
+import { useTranslations } from "use-intl";
 
-// Images (replace with your actual image paths)
 import KuwaitImage from "/public/assets/imgs/location/kuwait.png";
 import pakistanImage from "/public/assets/imgs/location/map.png";
 import saudiImage from "/public/assets/imgs/location/saudi-arabia.png";
@@ -10,82 +11,94 @@ import USAYoming from "/public/assets/imgs/location/usa.png";
 import UnitedKingdom from "/public/assets/imgs/location/united-kingdom.png";
 
 const Location = () => {
+  const t = useTranslations();
+
   return (
     <section className="location-section">
-      <h1>Our Locations</h1>
+      <h1>{t("locationTitle")}</h1>
       <div className="card-grid">
-        {/* Card 1 */}
+        {/* Card 1 - Pakistan */}
         <div className="card">
           <div className="card-image">
             <Image
               src={pakistanImage}
-              alt="Map of Pakistan"
+              alt={t("locationPakistanTitle")}
               width={50}
               height={50}
             />
           </div>
-          <h3>Pakistan</h3>
-          <p>Park Road , Near Chak Shahzad Islamabad Pakistan</p>
+          <h3>{t("locationPakistanTitle")}</h3>
+          <p>{t("locationPakistanAddress")}</p>
         </div>
-        {/* Card 2 */}
+
+        {/* Card 2 - Kuwait */}
         <div className="card">
           <div className="card-image">
             <Image
               src={KuwaitImage}
-              alt="Kuwait Location"
+              alt={t("locationKuwaitTitle")}
               width={50}
               height={50}
             />
           </div>
-          <h3>Kuwait</h3>
-          <p>Street: P O Box: 6648 Salmiya, 22077</p>
+          <h3>{t("locationKuwaitTitle")}</h3>
+          <p>{t("locationKuwaitAddress")}</p>
         </div>
-        {/* Card 3 */}
+
+        {/* Card 3 - USA California */}
         <div className="card">
           <div className="card-image">
             <Image
               src={USACalifornia}
-              alt="Statue of Liberty"
+              alt={t("locationUSACaliTitle")}
               width={50}
               height={50}
             />
           </div>
-          <h3>USA California</h3>
-          <p>339 South Blue Spring Avenue Oxnard, CA 93030</p>
+          <h3>{t("locationUSACaliTitle")}</h3>
+          <p>{t("locationUSACaliAddress")}</p>
         </div>
-        {/* Card 4 */}
+
+        {/* Card 4 - Saudi Arabia */}
         <div className="card">
           <div className="card-image">
             <Image
               src={saudiImage}
-              alt="Saudi Arabia Location"
+              alt={t("locationSaudiTitle")}
               width={50}
               height={50}
             />
           </div>
-          <h3>Saudi Arab</h3>
-          <p>Street King Abdulaziz Rd, As Safra</p>
+          <h3>{t("locationSaudiTitle")}</h3>
+          <p>{t("locationSaudiAddress")}</p>
         </div>
-        {/* Card 5 */}
+
+        {/* Card 5 - USA Wyoming */}
         <div className="card">
           <div className="card-image">
-            <Image src={USAYoming} alt="USA Map" width={50} height={50} />
+            <Image
+              src={USAYoming}
+              alt={t("locationUSAWyomingTitle")}
+              width={50}
+              height={50}
+            />
           </div>
-          <h3>USA Wyoming</h3>
-          <p>1309 Coffeen Avenue STE 13600 Sheridan Wyoming 82801</p>
+          <h3>{t("locationUSAWyomingTitle")}</h3>
+          <p>{t("locationUSAWyomingAddress")}</p>
         </div>
-        {/* Card 6 */}
+
+        {/* Card 6 - United Kingdom */}
         <div className="card">
           <div className="card-image">
             <Image
               src={UnitedKingdom}
-              alt="United Kingdom Location"
+              alt={t("locationUKTitle")}
               width={50}
               height={50}
             />
           </div>
-          <h3>United Kingdom</h3>
-          <p>Vogue House, 1 Hanover Square Mayfair</p>
+          <h3>{t("locationUKTitle")}</h3>
+          <p>{t("locationUKAddress")}</p>
         </div>
       </div>
     </section>

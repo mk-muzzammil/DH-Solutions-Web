@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { NextIntlClientProvider } from "next-intl";
-import { loadMessages } from "@/lib/utils/loadMessages"; // The helper from Step 3
+import { loadMessages } from "@/lib/utils/loadMessages";
+import Cookies from "js-cookie";
 
 import allNavData from "../../../data/navData.json";
 import Preloader from "@/components/preloader/Preloader";
@@ -19,20 +20,21 @@ import Header4 from "@/components/header/Header4";
 import Header5 from "@/components/header/Header5";
 
 const HeaderContent = ({ header, navData }) => {
-  if (header == "header1") {
-    return <Header1 navData={navData} />;
-  } else if (header == "header2") {
-    return <Header2 navData={navData} />;
-  } else if (header == "header3") {
-    return <Header3 />;
-  } else if (header == "header4") {
-    return <Header4 navData={navData} />;
-  } else if (header == "header5") {
-    return <Header5 />;
-  } else if (header == "none") {
-    return null;
-  } else {
-    return <Header3 />;
+  switch (header) {
+    case "header1":
+      return <Header1 navData={navData} />;
+    case "header2":
+      return <Header2 navData={navData} />;
+    case "header3":
+      return <Header3 />;
+    case "header4":
+      return <Header4 navData={navData} />;
+    case "header5":
+      return <Header5 />;
+    case "none":
+      return null;
+    default:
+      return <Header3 />;
   }
 };
 
@@ -41,37 +43,57 @@ export default function RootLayout({
   header = "",
   defaultMode = "",
 }) {
-  // 1) For color mode (already in your code)
+  // For color mode (dark/light)
   const [mode, setMode] = useState(defaultMode);
 
-  // 2) For language
-  const [locale, setLocale] = useState("en");
-  const [messages, setMessages] = useState(null);
+  // 1) Initialize locale from cookie if it exists, otherwise "en"
+  const [locale, setLocale] = useState(() => {
+    if (typeof window !== "undefined") {
+      return Cookies.get("locale") || "en";
+    }
+    return "en"; // fallback if SSR
+  });
 
+  const [messages, setMessages] = useState(null);
   const [navData, setNavData] = useState({});
   const cursor1 = useRef();
   const cursor2 = useRef();
 
+  // Load navigation data
   useEffect(() => {
     setNavData(allNavData);
   }, []);
 
-  // 3) Load translation messages whenever locale changes
+  // 2) Load translation messages whenever locale changes
   useEffect(() => {
     let isMounted = true;
-    async function fetchMessages() {
+    const fetchMessages = async () => {
       const loaded = await loadMessages(locale);
       if (isMounted) {
         setMessages(loaded);
       }
-    }
+    };
     fetchMessages();
     return () => {
       isMounted = false;
     };
   }, [locale]);
 
-  // 4) This effect handles "dark" mode toggling (your existing logic)
+  // 3) Whenever locale changes, update the cookie
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentCookie = Cookies.get("locale");
+      if (locale && locale !== currentCookie) {
+        Cookies.set("locale", locale, {
+          expires: 365, // 1 year
+          sameSite: "strict",
+          path: "/",
+        });
+      }
+    }
+  }, [locale]);
+
+  // Dark mode effect
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (mode === "dark") {
@@ -82,7 +104,7 @@ export default function RootLayout({
     }
   }, [mode]);
 
-  // 5) Handle RTL/LTR by setting the <html dir="..."> attribute
+  // RTL / LTR toggle
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.setAttribute(
@@ -93,13 +115,12 @@ export default function RootLayout({
     }
   }, [locale]);
 
-  // 6) If messages are still loading, you can show a fallback or your Preloader
+  // If messages are still loading, show a fallback
   if (!messages) {
     return <Preloader />;
   }
 
   return (
-    // 7) Wrap everything inside NextIntlClientProvider
     <NextIntlClientProvider locale={locale} messages={messages}>
       <CommonAnimation>
         <div className="has-smooth" id="has_smooth"></div>
@@ -109,7 +130,8 @@ export default function RootLayout({
         </div>
         <Preloader />
         <CursorAnimation cursor1={cursor1} cursor2={cursor2} />
-        {/* Pass setLocale down so the Switcher can switch languages */}
+
+        {/* Switcher can now call setLocale, which sets the cookie */}
         <Switcher
           setMode={setMode}
           mode={mode}
@@ -118,8 +140,11 @@ export default function RootLayout({
           locale={locale}
           setLocale={setLocale}
         />
+
         <ScrollTop />
+
         <HeaderContent header={header} navData={navData} />
+
         <div id="smooth-wrapper">
           <div id="smooth-content">
             {children}

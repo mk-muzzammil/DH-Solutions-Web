@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Solution from "../../../public/assets/imgs/thumb/solution.png";
@@ -10,10 +11,13 @@ import Icon4 from "../../../public/assets/imgs/icon/4.png";
 import Icon5 from "../../../public/assets/imgs/icon/5.png";
 import Image from "next/image";
 import animationCharCome from "@/lib/utils/animationCharCome";
+import { useTranslations } from "next-intl";
 
 const ServiceHero = () => {
+  const t = useTranslations();
   const charAnim = useRef();
   const solutionArea = useRef();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       let image_list = [".solution__wrapper img"];
@@ -24,49 +28,21 @@ const ServiceHero = () => {
 
   function imageMoving(image_list) {
     let container = solutionArea.current;
-    try {
-      if (container) {
-        container.addEventListener("mousemove", (e) => {
-          var x = e.clientX;
-          var y = e.clientY;
-          let viewportWidth = window.innerWidth;
-          let center = viewportWidth / 2;
-          let centerHeight = innerHeight / 2;
+    if (!container) return;
+    container.addEventListener("mousemove", (e) => {
+      var x = e.clientX;
+      var y = e.clientY;
+      let viewportWidth = window.innerWidth;
+      let center = viewportWidth / 2;
+      let centerHeight = window.innerHeight / 2;
 
-          let tHero = gsap.context(() => {
-            if (x > center) {
-              gsap.to(image_list, {
-                x: 15,
-                duration: 5,
-                ease: "power4.out",
-              });
-            } else {
-              gsap.to(image_list, {
-                x: -15,
-                duration: 5,
-                ease: "power4.out",
-              });
-            }
-            if (y > centerHeight) {
-              gsap.to(image_list, {
-                y: 15,
-                duration: 5,
-                ease: "power4.out",
-              });
-            } else {
-              gsap.to(image_list, {
-                y: -15,
-                duration: 5,
-                ease: "power4.out",
-              });
-            }
-          });
-          return () => tHero.revert();
-        });
-      }
-    } catch (err) {
-      console.log(err);
-    }
+      gsap.to(image_list, {
+        x: x > center ? 15 : -15,
+        y: y > centerHeight ? 15 : -15,
+        duration: 5,
+        ease: "power4.out",
+      });
+    });
   }
 
   return (
@@ -97,12 +73,9 @@ const ServiceHero = () => {
 
           <div className="solution__mid">
             <h1 className="solution__title animation__char_come" ref={charAnim}>
-              Digital Solution
+              {t("serviceHeroTitle")}
             </h1>
-            <p>
-              We’re designing digital experiences that enrich human lives and it
-              helps to grow your business globally trends.
-            </p>
+            <p>{t("serviceHeroPara")}</p>
           </div>
 
           <div className="solution__right">
@@ -123,9 +96,9 @@ const ServiceHero = () => {
             <div className="col-xxl-12">
               <div className="solution__btm">
                 <ul>
-                  <li>Approch</li>
-                  <li>Creativity</li>
-                  <li>Experienced</li>
+                  <li>{t("serviceHeroApproach1")}</li>
+                  <li>{t("serviceHeroApproach2")}</li>
+                  <li>{t("serviceHeroApproach3")}</li>
                 </ul>
               </div>
             </div>

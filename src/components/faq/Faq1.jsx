@@ -1,12 +1,17 @@
+"use client";
 import animationCharCome from "@/lib/utils/animationCharCome";
 import { useEffect, useRef } from "react";
 import { Accordion } from "react-bootstrap";
+import { useTranslations } from "use-intl";
 
 const Faq1 = () => {
   const charAnim = useRef();
+  const t = useTranslations();
+
   useEffect(() => {
     animationCharCome(charAnim.current);
   }, []);
+
   return (
     <>
       <section className="faq__area-6">
@@ -16,11 +21,9 @@ const Faq1 = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title-2 animation__char_come" ref={charAnim}>
-                  FAQ
+                  {t("faqTitle")}
                 </h2>
-                <p className="">
-                  Frequently asked question (FAQ) <br /> pages to find answars.
-                </p>
+                <p>{t("faqSubtitle")}</p>
               </div>
             </div>
           </div>
@@ -38,22 +41,14 @@ const Faq1 = () => {
                       className="accordion-header"
                       id="headingOne"
                     >
-                      Design should enrich our day
+                      {t("servicesFaqItem1")}
                     </Accordion.Header>
-
                     <Accordion.Body className="accordion-body">
                       <p>
+                        {/* Example text can remain as is, or further localized if you prefer */}
                         People know what an FAQ is, so make that your page
                         title. Don’t overcomplicate things by calling it “Good
-                        to Know” or “More Info”. Sometimes people put the
-                        frequently asked questions section on their Contact
-                        page, but you can create your own page and put it right
-                        in your website navigation menu or website footer so
-                        it’s easy to find. Getting a straight, quick answer to
-                        your question is a relief. So keep answers to a short
-                        paragraph if you can, less than 100 words. Answer the
-                        entire question in the FAQ without linking away to
-                        another page
+                        to Know”...
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -63,22 +58,12 @@ const Faq1 = () => {
                       className="accordion-header"
                       id="headingTwo"
                     >
-                      Bring their individual experience and creative
+                      {t("servicesFaqItem2")}
                     </Accordion.Header>
-
                     <Accordion.Body className="accordion-body">
                       <p>
-                        People know what an FAQ is, so make that your page
-                        title. Don’t overcomplicate things by calling it “Good
-                        to Know” or “More Info”. Sometimes people put the
-                        frequently asked questions section on their Contact
-                        page, but you can create your own page and put it right
-                        in your website navigation menu or website footer so
-                        it’s easy to find. Getting a straight, quick answer to
-                        your question is a relief. So keep answers to a short
-                        paragraph if you can, less than 100 words. Answer the
-                        entire question in the FAQ without linking away to
-                        another page
+                        {/* More example text... */}
+                        This is the second items accordion body...
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
@@ -88,23 +73,10 @@ const Faq1 = () => {
                       className="accordion-header"
                       id="headingThree"
                     >
-                      Human centred design to challenges
+                      {t("servicesFaqItem3")}
                     </Accordion.Header>
-
                     <Accordion.Body className="accordion-body">
-                      <p>
-                        People know what an FAQ is, so make that your page
-                        title. Don’t overcomplicate things by calling it “Good
-                        to Know” or “More Info”. Sometimes people put the
-                        frequently asked questions section on their Contact
-                        page, but you can create your own page and put it right
-                        in your website navigation menu or website footer so
-                        it’s easy to find. Getting a straight, quick answer to
-                        your question is a relief. So keep answers to a short
-                        paragraph if you can, less than 100 words. Answer the
-                        entire question in the FAQ without linking away to
-                        another page
-                      </p>
+                      <p>People know what an FAQ is...</p>
                     </Accordion.Body>
                   </Accordion.Item>
 
@@ -113,23 +85,10 @@ const Faq1 = () => {
                       className="accordion-header"
                       id="headingFour"
                     >
-                      Design should enrich our day
+                      {t("servicesFaqItem4")}
                     </Accordion.Header>
-
                     <Accordion.Body className="accordion-body">
-                      <p>
-                        People know what an FAQ is, so make that your page
-                        title. Don’t overcomplicate things by calling it “Good
-                        to Know” or “More Info”. Sometimes people put the
-                        frequently asked questions section on their Contact
-                        page, but you can create your own page and put it right
-                        in your website navigation menu or website footer so
-                        it’s easy to find. Getting a straight, quick answer to
-                        your question is a relief. So keep answers to a short
-                        paragraph if you can, less than 100 words. Answer the
-                        entire question in the FAQ without linking away to
-                        another page
-                      </p>
+                      <p>People know what an FAQ is...</p>
                     </Accordion.Body>
                   </Accordion.Item>
 
@@ -138,23 +97,10 @@ const Faq1 = () => {
                       className="accordion-header"
                       id="headingFive"
                     >
-                      Developing core web applications
+                      {t("servicesFaqItem5")}
                     </Accordion.Header>
-
                     <Accordion.Body className="accordion-body">
-                      <p>
-                        People know what an FAQ is, so make that your page
-                        title. Don’t overcomplicate things by calling it “Good
-                        to Know” or “More Info”. Sometimes people put the
-                        frequently asked questions section on their Contact
-                        page, but you can create your own page and put it right
-                        in your website navigation menu or website footer so
-                        it’s easy to find. Getting a straight, quick answer to
-                        your question is a relief. So keep answers to a short
-                        paragraph if you can, less than 100 words. Answer the
-                        entire question in the FAQ without linking away to
-                        another page
-                      </p>
+                      <p>People know what an FAQ is...</p>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>

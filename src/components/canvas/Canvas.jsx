@@ -126,7 +126,7 @@ const Canvas = ({ bladeMode = "", ofCanvasArea }) => {
                     </div>
 
                     <div className="header_title">
-                      <Link href={"/blog"}>{t("navBlog")}</Link>
+                      <Link href={"/blog/"}>{t("navBlog")}</Link>
                     </div>
 
                     <div className="header_title">

@@ -14,15 +14,15 @@ const Contact1 = () => {
 
   // Array of services (still in English or add to i18n if desired)
   const services = [
-    "Web Development",
-    "Mobile App Development",
-    "AI/ML Solutions",
-    "Cyber Security",
-    "DEVOPS Solutions",
-    "Custom Software Development",
-    "QA & Testing",
-    "Computer Vision",
-    "Other",
+    { label: t("webDevelopment") },
+    { label: t("mobileDevelopment") },
+    { label: t("aI/MLSolutions") },
+    { label: t("cyberSecurity") },
+    { label: t("devOps") },
+    { label: t("customSoftwareDevelopment") },
+    { label: t("testing") },
+    { label: t("computerVision") },
+    { label: t("others") },
   ];
 
   // Trigger animations on component mount
@@ -172,8 +172,8 @@ const Contact1 = () => {
                         {t("contactServicePlaceholder")}
                       </option>
                       {services.map((service, index) => (
-                        <option key={index} value={service}>
-                          {service}
+                        <option key={index} value={service.label}>
+                          {service.label}
                         </option>
                       ))}
                     </select>

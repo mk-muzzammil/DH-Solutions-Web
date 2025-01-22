@@ -150,5 +150,14 @@
   "ourDesignServuces": "Our design services...",
   "ourDesignServucesStart": "Our design services starts ...",
   "aboutCompany": "About Company",
-  "caseStudy": "Case Study"
+  "caseStudy": "Case Study",
+  "webDevelopment": "Web Development",
+  "mobileDevelopment": "Mobile App Development",
+  "aI/MLSolutions": "AI/ML Solutions",
+  "cyberSecurity": "Cyber Security",
+  "devOps": "DevOps Solutions",
+  "customSoftwareDevelopment": "Custom Software Development",
+  "testing": "QA & Testing",
+  "computerVision": "Computer Vision",
+  "others": "Others"
 }

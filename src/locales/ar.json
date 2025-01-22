@@ -149,5 +149,14 @@
   "ourDesignServuces": "خدمات التصميم الخاصة بنا",
   "ourDesignServucesStart": " نحن نقدم خدمات تصميمية مبتكرة للعلامات التجارية الناشئة والشركات الكبيرة لتحقيق أهدافها وتحقيق النجاح في العالم الرقمي.",
   "aboutCompany": "عن الشركة",
-  "caseStudy": "دراسة الحالة"
+  "caseStudy": "دراسة الحالة",
+  "webDevelopment": "تطوير الويب",
+  "mobileDevelopment": "تطوير تطبيقات الهاتف المحمول",
+  "aI/MLSolutions": "حلول الذكاء الاصطناعي والتعلم الآلي",
+  "cyberSecurity": "الأمن السيبراني",
+  "devOps": "حلول ديف أوبس",
+  "customSoftwareDevelopment": "تطوير البرمجيات المخصصة",
+  "testing": "ضمان الجودة والاختبار",
+  "computerVision": "رؤية الحاسوب",
+  "others": "أخرى"
 }

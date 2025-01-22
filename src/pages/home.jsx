@@ -11,7 +11,7 @@ import DigitalAgencyWorkflow from "@/components/workflow/DigitalAgencyWorkflow";
 import DigitalAgencyPortfolio from "@/components/portfolio/DigitalAgencyPortfolio";
 import DigitalAgencyBrand from "@/components/brand/DigitalAgencyBrand";
 // import DigitalAgencyTestimonial from "@/components/testimonial/DigitalAgencyTestimonial";
-// import DigitalAgencyBlog from "@/components/blog/DigitalAgencyBlog";
+import DigitalAgencyBlog from "@/components/blog/DigitalAgencyBlog";
 import DigitalAgencyCTA from "@/components/cta/DigitalAgencyCTA";
 import AboutTestimonial from "@/components/testimonial/AboutTestimonial";
 
@@ -102,6 +102,7 @@ const DigitalAgency = () => {
           <DigitalAgencyWorkflow />
           <DigitalAgencyPortfolio />
           <DigitalAgencyBrand />
+          <DigitalAgencyBlog />
           <AboutTestimonial />
           <DigitalAgencyCTA />
         </RootLayout>

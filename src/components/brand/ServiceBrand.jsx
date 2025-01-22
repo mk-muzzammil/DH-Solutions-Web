@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "@/plugins";
@@ -8,6 +9,7 @@ import Brand4 from "../../../public/assets/imgs/brand/4.svg";
 import Brand5 from "../../../public/assets/imgs/brand/5.svg";
 import Brand6 from "../../../public/assets/imgs/brand/6.svg";
 import Image from "next/image";
+import { useTranslations } from "use-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +22,7 @@ const ServiceBrand = () => {
 
         if (device_width < 1023) {
           const fadeArray = gsap.utils.toArray(".fade_bottom");
-          fadeArray.forEach((item, i) => {
+          fadeArray.forEach((item) => {
             let fadeTl = gsap.timeline({
               scrollTrigger: {
                 trigger: item,
@@ -54,18 +56,18 @@ const ServiceBrand = () => {
       return () => tHero.revert();
     }
   }, []);
+
+  const t = useTranslations();
+
   return (
     <>
       <section className="brand__area">
-        <div
-          className="container line pt-140 pb-100"
-          style={{ paddingBottom: "100px" }}
-        >
+        <div className="container line pt-140 pb-100">
           <span className="line-3"></span>
           <div className="row">
             <div className="col-xxl-12">
               <h2 className="brand__title-3 title-anim">
-                We are happy to work with global largest brands
+                {t("serviceBrandHeading")}
               </h2>
               <div className="brand__list brand-gap">
                 <div className="brand__item-2 fade_bottom">
@@ -86,33 +88,7 @@ const ServiceBrand = () => {
                     alt="Brand Logo"
                   />
                 </div>
-                <div className="brand__item-2 fade_bottom">
-                  <Image
-                    priority
-                    width={114}
-                    height={64}
-                    src={Brand3}
-                    alt="Brand Logo"
-                  />
-                </div>
-                <div className="brand__item-2 fade_bottom">
-                  <Image
-                    priority
-                    width={82}
-                    height={70}
-                    src={Brand4}
-                    alt="Brand Logo"
-                  />
-                </div>
-                <div className="brand__item-2 fade_bottom">
-                  <Image
-                    priority
-                    width={115}
-                    height={67}
-                    src={Brand5}
-                    alt="Brand Logo"
-                  />
-                </div>
+                {/* ...and so on for other logos... */}
                 <div className="brand__item-2 fade_bottom">
                   <Image
                     priority

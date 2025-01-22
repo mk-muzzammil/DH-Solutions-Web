@@ -1,10 +1,14 @@
+"use client";
 import { useEffect } from "react";
 import { Power1, gsap } from "gsap";
 import { ScrollTrigger } from "@/plugins";
+import { useTranslations } from "use-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DigitalAgencyCounter = () => {
+  const t = useTranslations();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       let device_width = window.innerWidth;
@@ -14,7 +18,7 @@ const DigitalAgencyCounter = () => {
           const counterArray = gsap.utils.toArray(
             ".counter_animation .counter__anim"
           );
-          counterArray.forEach((item, i) => {
+          counterArray.forEach((item) => {
             let counterTl = gsap.timeline({
               scrollTrigger: {
                 trigger: item,
@@ -43,6 +47,7 @@ const DigitalAgencyCounter = () => {
             },
           });
         }
+        // Animate numeric count
         for (let i = 1; i < 5; i++) {
           gsap.from(gsap.utils.toArray(`.count${i}`), {
             textContent: 0,
@@ -60,6 +65,7 @@ const DigitalAgencyCounter = () => {
       return () => tHero.revert();
     }
   }, []);
+
   return (
     <>
       <section className="counter__area">
@@ -72,32 +78,32 @@ const DigitalAgencyCounter = () => {
                 <div className="counter__item counter__anim">
                   <h2 className="counter__number count1">1000k+</h2>
                   <p>
-                    Project <br />
-                    completed
+                    {t("digitalAgencyCounter1Title")} <br />
+                    {t("digitalAgencyCounter1Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>
                 <div className="counter__item counter__anim">
                   <h2 className="counter__number count2">20k+</h2>
                   <p>
-                    Happy <br />
-                    customers
+                    {t("digitalAgencyCounter2Title")} <br />
+                    {t("digitalAgencyCounter2Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>
                 <div className="counter__item counter__anim">
                   <h2 className="counter__number count3">5</h2>
                   <p>
-                    Years <br />
-                    experiences
+                    {t("digitalAgencyCounter3Title")} <br />
+                    {t("digitalAgencyCounter3Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>
                 <div className="counter__item counter__anim">
                   <h2 className="counter__number count4">4</h2>
                   <p>
-                    Awards <br />
-                    achievement
+                    {t("digitalAgencyCounter4Title")} <br />
+                    {t("digitalAgencyCounter4Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>

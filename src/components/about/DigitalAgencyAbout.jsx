@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger, ScrollSmoother } from "@/plugins";
@@ -5,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import About11 from "../../../public/assets/imgs/about/1/1.jpg";
 import About12 from "../../../public/assets/imgs/about/1/2.jpg";
+import { useTranslations } from "use-intl";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -24,6 +26,9 @@ const DigitalAgencyAbout = () => {
       return () => tHero.revert();
     }
   }, []);
+
+  const t = useTranslations(); // Import from 'use-intl' or 'next-intl'
+
   return (
     <>
       <section className="about__area">
@@ -32,9 +37,7 @@ const DigitalAgencyAbout = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="about__title-wrapper">
-                <h3 className="sec-title title-anim">
-                  We unlock the potential of your business with creative design
-                </h3>
+                <h3 className="sec-title title-anim">{t("aboutHeading")}</h3>
               </div>
 
               <div className="about__content-wrapper">
@@ -66,21 +69,14 @@ const DigitalAgencyAbout = () => {
                 </div>
 
                 <div className="about__content text-anim">
-                  <p>
-                    From traditional PR and thought leadership campaigns to
-                    storytelling and creative social media management we’ve got
-                    you covered. Something is not your average order-taking
-                    vendor. We are proud to be the go-to partner for some of the
-                    world’s biggest agencies and brands because they trust our
-                    expertise
-                  </p>
+                  <p>{t("aboutPara")}</p>
 
                   <div className="cursor-btn btn_wrapper">
                     <Link
                       className="btn-item wc-btn-primary btn-hover"
                       href="/about"
                     >
-                      <span></span> Explore Us{" "}
+                      <span></span> {t("aboutExploreBtn")}{" "}
                       <i className="fa-solid fa-arrow-right"></i>
                     </Link>
                   </div>

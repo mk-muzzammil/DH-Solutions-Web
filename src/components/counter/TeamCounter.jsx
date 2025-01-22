@@ -1,10 +1,14 @@
+"use client";
 import { useEffect } from "react";
 import { Power1, gsap } from "gsap";
 import { ScrollTrigger } from "@/plugins";
+import { useTranslations } from "use-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TeamCounter = () => {
+  const t = useTranslations();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       let tHero = gsap.context(() => {
@@ -25,6 +29,7 @@ const TeamCounter = () => {
       return () => tHero.revert();
     }
   }, []);
+
   return (
     <>
       <section className="counter__area">
@@ -37,32 +42,32 @@ const TeamCounter = () => {
                 <div className="counter__item-2">
                   <h2 className="counter__number count1">1000+</h2>
                   <p>
-                    Project <br />
-                    completed
+                    {t("teamCounter1Title")} <br />
+                    {t("teamCounter1Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>
                 <div className="counter__item-2">
                   <h2 className="counter__number count2">25+</h2>
                   <p>
-                    Happy <br />
-                    customers
+                    {t("teamCounter2Title")} <br />
+                    {t("teamCounter2Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>
                 <div className="counter__item-2">
                   <h2 className="counter__number count3">5+</h2>
                   <p>
-                    Years <br />
-                    experiences
+                    {t("teamCounter3Title")} <br />
+                    {t("teamCounter3Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>
                 <div className="counter__item-2">
                   <h2 className="counter__number count4">4</h2>
                   <p>
-                    Awards <br />
-                    achievement
+                    {t("teamCounter4Title")} <br />
+                    {t("teamCounter4Subtitle")}
                   </p>
                   <span className="counter__border"></span>
                 </div>

@@ -1,4 +1,9 @@
+"use client";
+import { useTranslations } from "use-intl";
+
 const CareerBenefit = () => {
+  const t = useTranslations();
+
   return (
     <>
       <section className="career__benefits">
@@ -8,40 +13,20 @@ const CareerBenefit = () => {
           <div className="row">
             <div className="col-xxl-7 col-xl-7 col-lg-7">
               <ul className="career__benefits-list">
-                <li>
-                  Vacation & Paid <br />
-                  Time Off
-                </li>
-                <li>
-                  Work-life <br /> Integration
-                </li>
-                <li>
-                  Maternity/Paternity <br />
-                  Benefits
-                </li>
-                <li>
-                  Personal <br /> Career Growth
-                </li>
-                <li>
-                  Learning & <br />
-                  Development
-                </li>
-                <li>
-                  Hybrid Working <br /> Enviroment
-                </li>
+                <li>{t("careerBenefitItem1")}</li>
+                <li>{t("careerBenefitItem2")}</li>
+                <li>{t("careerBenefitItem3")}</li>
+                <li>{t("careerBenefitItem4")}</li>
+                <li>{t("careerBenefitItem5")}</li>
+                <li>{t("careerBenefitItem6")}</li>
               </ul>
             </div>
             <div className="col-xxl-5 col-xl-5 col-lg-5">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Global Perks & Benefits
+                  {t("careerBenefitHeading")}
                 </h2>
-                <p>
-                  We want you to love working here as much as we do. To inspire
-                  our team to be creative, productive, and most importantly –
-                  feel valued as employees, we offer endless perks and
-                  de-stressors. How fun it is to unwind while at work!
-                </p>
+                <p>{t("careerBenefitPara")}</p>
               </div>
             </div>
           </div>

@@ -1,8 +1,12 @@
+"use client";
 import Link from "next/link";
+import { useTranslations } from "use-intl";
 
 const Career1 = () => {
-  // Set an array for jobs, which will be empty if no jobs are available
-  const jobs = []; // Replace with job data if available
+  // Example job array (if you have an API or DB, fetch your data dynamically)
+  const jobs = []; // Replace with real job data if available
+
+  const t = useTranslations();
 
   return (
     <>
@@ -11,10 +15,7 @@ const Career1 = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
-                <h2 className="sec-title title-anim">
-                  We’re Currently <br />
-                  hiring
-                </h2>
+                <h2 className="sec-title title-anim">{t("careerHeading")}</h2>
               </div>
             </div>
             <div className="col-xxl-12">
@@ -39,10 +40,10 @@ const Career1 = () => {
                 </div>
               ) : (
                 <div className="no-jobs">
-                  <p>No job openings are available at the moment.</p>
+                  <p>{t("careerNoJobsHeading")}</p>
                   <p>
-                    If you’re interested in working with us, please send your
-                    resume to <a href="mailto:hr@dhsol.net">hr@dhsol.net</a>.
+                    {t("careerNoJobsLine2")}{" "}
+                    <a href="mailto:hr@dhsol.net">hr@dhsol.net</a>.
                   </p>
                 </div>
               )}

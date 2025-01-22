@@ -1,10 +1,14 @@
+"use client";
 import Story1 from "../../../public/assets/imgs/story/1.jpg";
 import Story2 from "../../../public/assets/imgs/story/2.png";
 import Story3 from "../../../public/assets/imgs/story/3.jpg";
 import Story4 from "../../../public/assets/imgs/story/4.jpg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const AboutStory = () => {
+  const t = useTranslations();
+
   return (
     <>
       <section className="story__area">
@@ -12,37 +16,20 @@ const AboutStory = () => {
           <span className="line-3"></span>
           <div className="sec-title-wrapper">
             <div className="from-text">
-              from <span>2020</span>
+              {t("aboutStoryFrom")} <span>{t("aboutStoryYear")}</span>
             </div>
 
             <div className="row">
               <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
-                <h2 className="sec-sub-title title-anim">DH Solutions</h2>
-                <h3 className="sec-title title-anim">Our story</h3>
+                <h2 className="sec-sub-title title-anim">
+                  {t("aboutStorySub")}
+                </h2>
+                <h3 className="sec-title title-anim">{t("aboutStoryTitle")}</h3>
               </div>
               <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
                 <div className="story__text">
-                  <p>
-                    Our journey began in Pakistan, where we set out to create
-                    innovative and impactful digital solutions for businesses.
-                    Fueled by a commitment to excellence and a passion for
-                    creativity, DH Solutions quickly grew from a local
-                    initiative to a trusted name in tech and digital
-                    development. Our focus on crafting unique, user-centered
-                    designs and reliable software has built strong partnerships
-                    with some of the world’s most recognizable brands.
-                  </p>
-                  <p>
-                    As our reputation grew, so did our reach. We expanded to
-                    Kuwait, Saudi Arabia, UAE, USA, UK, and Qatar, bringing our
-                    expertise to international markets. Our global team
-                    collaborates to offer seamless solutions that drive business
-                    transformation across borders, continuously evolving to meet
-                    the needs of diverse clients in various industries. At DH
-                    Solutions, we pride ourselves on blending technical skill
-                    with creative vision to build exceptional digital
-                    experiences worldwide.
-                  </p>
+                  <p>{t("aboutStoryPara1")}</p>
+                  <p>{t("aboutStoryPara2")}</p>
                 </div>
               </div>
             </div>

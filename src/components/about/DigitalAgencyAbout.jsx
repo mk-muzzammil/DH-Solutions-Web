@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import About11 from "../../../public/assets/imgs/about/1/1.jpg";
 import About12 from "../../../public/assets/imgs/about/1/2.jpg";
+import { useTransition } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -24,6 +25,7 @@ const DigitalAgencyAbout = () => {
       return () => tHero.revert();
     }
   }, []);
+  const t = useTransition();
   return (
     <>
       <section className="about__area">
@@ -32,9 +34,7 @@ const DigitalAgencyAbout = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="about__title-wrapper">
-                <h3 className="sec-title title-anim">
-                  We unlock the potential of your business with creative design
-                </h3>
+                <h3 className="sec-title title-anim">{t("aboutHeading")}</h3>
               </div>
 
               <div className="about__content-wrapper">

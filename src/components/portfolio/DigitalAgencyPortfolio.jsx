@@ -119,6 +119,54 @@ const DigitalAgencyPortfolio = () => {
                   <p>{t("digitalAgencyPortfolioDate")}</p>
                 </div>
               </div>
+              <div className="portfolio__item">
+                <Link href="/portfolio-details">
+                  <Image
+                    priority
+                    style={{ width: "100%", height: "auto" }}
+                    src={Portfilio12}
+                    alt="Portfolio Image"
+                  />
+                </Link>
+                <div className="portfolio__info">
+                  <h3 className="portfolio__title">
+                    {t("digitalAgencyPortfolioTitle")}
+                  </h3>
+                  <p>{t("digitalAgencyPortfolioDate")}</p>
+                </div>
+              </div>
+              <div className="portfolio__item">
+                <Link href="/portfolio-details">
+                  <Image
+                    priority
+                    style={{ width: "100%", height: "auto" }}
+                    src={Portfilio13}
+                    alt="Portfolio Image"
+                  />
+                </Link>
+                <div className="portfolio__info">
+                  <h3 className="portfolio__title">
+                    {t("digitalAgencyPortfolioTitle")}
+                  </h3>
+                  <p>{t("digitalAgencyPortfolioDate")}</p>
+                </div>
+              </div>
+              <div className="portfolio__item">
+                <Link href="/portfolio-details">
+                  <Image
+                    priority
+                    style={{ width: "100%", height: "auto" }}
+                    src={Portfilio11}
+                    alt="Portfolio Image"
+                  />
+                </Link>
+                <div className="portfolio__info">
+                  <h3 className="portfolio__title">
+                    {t("digitalAgencyPortfolioTitle")}
+                  </h3>
+                  <p>{t("digitalAgencyPortfolioDate")}</p>
+                </div>
+              </div>
             </div>
           </div>
 

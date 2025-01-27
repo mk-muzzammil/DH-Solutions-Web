@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Your Trusted Partner for Exceptional Mobile App Development Services
+                  {t("trustedPartnerMobileDevelopmentTitle")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we specialize in mobile app development solutions tailored to empower your brand on all major platforms. Our dedicated team designs and develops apps that are visually appealing, highly functional, and user-friendly, ensuring seamless experiences across devices.
-                </p>
-                <p>
-                  With a commitment to quality and innovation, we focus on creating apps that not only engage users but also drive measurable growth. Our comprehensive approach, from ideation to deployment, ensures your app reflects your brand’s vision and delivers exceptional value to your audience.
-                </p>
+                <p>{t("trustedPartnerMobileDevelopmentPara1")}</p>
+                <p>{t("trustedPartnerMobileDevelopmentPara2")}</p>
               </div>
             </div>
           </div>

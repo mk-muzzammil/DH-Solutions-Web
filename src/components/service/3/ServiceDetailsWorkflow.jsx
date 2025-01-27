@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,48 +12,40 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Project <br />
-                    Planning
+                    {t("projectPlanningTitle")} <br />
+                    {t("projectPlanningTitlePart")}
                   </h6>
-                  <p>
-                    We begin by understanding client needs, defining goals, and planning the development phases to ensure the app aligns with the vision and user expectations.
-                  </p>
+                  <p>{t("projectPlanningTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    UI/UX <br />
-                    Design
+                    {t("UIUXdesginTitle")} <br />
+                    {t("UIUXdesginTitlePart")}
                   </h6>
-                  <p>
-                    Our design team crafts user-centric interfaces and experiences that prioritize usability, ensuring an intuitive and engaging mobile app experience.
-                  </p>
+                  <p>{t("UIUXdesginTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    App <br />
-                    Development
+                    {t("appDevelopmentTitle")} <br />
+                    {t("appDevelopmentTitlePart")}
                   </h6>
-                  <p>
-                    Building the app with the latest technologies, focusing on performance, security, and seamless functionality across iOS and Android platforms.
-                  </p>
+                  <p>{t("appDevelopmentTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Testing & <br />
-                    Deployment
+                    {t("testing&DeploymantTitle")} <br />
+                    {t("testing&DeploymantTitlePart")}
                   </h6>
-                  <p>
-                    Rigorous testing on various devices ensures a bug-free experience. We then deploy the app to app stores and offer support for future updates.
-                  </p>
+                  <p>{t("testing&DeploymantTitlePara")}</p>
                 </div>
               </div>
             </div>

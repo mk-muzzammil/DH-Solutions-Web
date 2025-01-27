@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 
 import TeamMemberCard from "./TeamMemberCard";
+import { useTranslations } from "next-intl";
 
 const AboutTeam = ({ member }) => {
   if (typeof window !== "undefined") {
@@ -58,17 +59,14 @@ const AboutTeam = ({ member }) => {
       console.log(error);
     }
   }
+  const t = useTranslations();
   return (
     <>
       <section className="team__area pt-140 pb-140">
         <div className="sec-title-wrapper">
-          <h2 className="sec-sub-title title-anim">Our Team</h2>
-          <h3 className="sec-title title-anim">How we work</h3>
-          <p>
-            We’re a diverse team that works as fancies attention to details,
-            enjoys beers on Friday nights, and aspires to design the dent in the
-            universe.
-          </p>
+          <h2 className="sec-sub-title title-anim">{t("ourTeamHeading")}</h2>
+          <h3 className="sec-title title-anim">{t("ourTeamHeading2")}</h3>
+          <p>{t("ourTeamPara")}</p>
         </div>
 
         <div className="team__slider">

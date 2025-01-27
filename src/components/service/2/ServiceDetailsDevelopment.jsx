@@ -3,13 +3,16 @@ import ThumbDev1 from "../../../../public/assets/imgs/thumb/left-top/2.svg";
 import ThumbDev2 from "../../../../public/assets/imgs/thumb/right-top/2.svg";
 import Image from "next/image";
 import animationCharCome from "@/lib/utils/animationCharCome";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsDevelopment = () => {
   const charAnim = useRef();
   useEffect(() => {
     animationCharCome(charAnim.current);
   }, []);
-  
+
+  const t = useTranslations();
+
   return (
     <>
       <section className="development__area">
@@ -19,27 +22,23 @@ const ServiceDetailsDevelopment = () => {
             <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title animation__char_come" ref={charAnim}>
-                  Expert Backend Development Services
+                  {t("serviceDetailsDevelopmentTitle")}
                 </h2>
               </div>
             </div>
             <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
               <div className="development__wrapper">
                 <div className="development__content">
-                  <p>
-                    At DH Solutions, we specialize in providing robust backend development services that serve as the backbone for your applications. Our skilled team focuses on building secure, scalable, and high-performance systems that align with your business requirements.
-                  </p>
-                  <p>
-                    We adopt a unique approach to backend development, treating each project as an opportunity to create seamless integrations and efficient workflows. Utilizing the latest technologies and frameworks, we build solutions that support your frontend interfaces and drive exceptional user experiences.
-                  </p>
+                  <p>{t("serviceDetailsDevelopmentParagraph1")}</p>
+                  <p>{t("serviceDetailsDevelopmentParagraph2")}</p>
                 </div>
                 <ul>
-                  <li>+ RESTful API Development</li>
-                  <li>+ Database Management (SQL & NoSQL)</li>
-                  <li>+ Server-Side Logic and Security</li>
-                  <li>+ Cloud Integration and Deployment</li>
-                  <li>+ Microservices Architecture</li>
-                  <li>+ Scalability and Performance Optimization</li>
+                  <li>+ {t("serviceDetailsDevelopmentListElem1")}</li>
+                  <li>+ {t("serviceDetailsDevelopmentListElem2")}</li>
+                  <li>+ {t("serviceDetailsDevelopmentListElem3")}</li>
+                  <li>+ {t("serviceDetailsDevelopmentListElem4")}</li>
+                  <li>+ {t("serviceDetailsDevelopmentListElem5")}</li>
+                  <li>+ {t("serviceDetailsDevelopmentListElem6")}</li>
                 </ul>
               </div>
             </div>
@@ -57,16 +56,13 @@ const ServiceDetailsDevelopment = () => {
           </div>
         </div>
       </section>
-       {/* Styled JSX for scoping CSS to this component */}
-       <style jsx>{`
-
-.col-xxl-8 {
-flex: 0 0 auto;
-width: 100%;
-}
-
-`}</style>
-
+      {/* Styled JSX for scoping CSS to this component */}
+      <style jsx>{`
+        .col-xxl-8 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      `}</style>
     </>
   );
 };

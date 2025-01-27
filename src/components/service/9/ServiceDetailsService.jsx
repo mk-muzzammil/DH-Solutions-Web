@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Your Trusted Partner for Exceptional Computer Vision Services
+                  {t("trustedPartnerComputerVisionTitle")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we provide cutting-edge computer vision solutions tailored to meet your specific business needs. Our expert team leverages advanced algorithms and techniques to deliver accurate and efficient image and video analysis, enabling you to extract valuable insights from visual data.
-                </p>
-                <p>
-                  Our commitment goes beyond just technology; we focus on creating impactful applications that enhance decision-making processes. We develop innovative computer vision applications that empower your business, improve operational efficiency, and elevate your competitive edge in the market.
-                </p>
+                <p>{t("trustedPartnerComputerVisionPara1")}</p>
+                <p>{t("trustedPartnerComputerVisionPara2")}</p>
               </div>
             </div>
           </div>

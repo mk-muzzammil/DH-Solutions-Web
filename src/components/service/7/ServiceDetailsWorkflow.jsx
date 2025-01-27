@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,48 +12,40 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Requirement <br />
-                    Gathering
+                    {t("requirementTitle")} <br />
+                    {t("requirementTitlePart")}
                   </h6>
-                  <p>
-                    Understanding your business needs and defining project requirements to ensure a tailored solution.
-                  </p>
+                  <p>{t("requirementPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Development <br />
-                    Phase
+                    {t("developmentTitle")} <br />
+                    {t("developmentTitlePart")}
                   </h6>
-                  <p>
-                    Building robust and scalable applications using the latest technologies and frameworks, ensuring high-quality code.
-                  </p>
+                  <p>{t("developmentPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Quality Assurance <br />
-                    Testing
+                    {t("QAtitle")} <br />
+                    {t("QAtitlePart")}
                   </h6>
-                  <p>
-                    Rigorous testing procedures to identify and resolve issues, ensuring the software is reliable and meets your standards.
-                  </p>
+                  <p>{t("QApara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Deployment and <br />
-                    Support
+                    {t("devlopmentTitle")} <br />
+                    {t("devlopmentTitlePart")}
                   </h6>
-                  <p>
-                    Launching the software and providing ongoing support and maintenance to ensure smooth operation and continuous improvement.
-                  </p>
+                  <p>{t("devlopmentPara")}</p>
                 </div>
               </div>
             </div>

@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,48 +12,40 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Threat Assessment <br />
-                    and Analysis
+                    {t("threatAssesmentTitle")} <br />
+                    {t("threatAssesmentTitlePart")}
                   </h6>
-                  <p>
-                    Identifying potential vulnerabilities and assessing threats to create a robust defense strategy.
-                  </p>
+                  <p>{t("threatAssesmentTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Strategy <br />
-                    Development
+                    {t("strategyDevelopmentTitle")} <br />
+                    {t("strategyDevelopmentTitlePart")}
                   </h6>
-                  <p>
-                    Crafting tailored security strategies that align with business goals and industry standards.
-                  </p>
+                  <p>{t("strategyDevelopmentTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Implementation <br />
-                    and Deployment
+                    {t("implementationTitle")} <br />
+                    {t("implementationTitlePart")}
                   </h6>
-                  <p>
-                    Implementing security measures and deploying solutions to protect your business from cyber threats.
-                  </p>
+                  <p>{t("implementationTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Continuous <br />
-                    Monitoring
+                    {t("continiousMonitoringTitle")} <br />
+                    {t("continiousMonitoringTitlePart")}
                   </h6>
-                  <p>
-                    Regularly monitoring systems and networks to detect anomalies and respond to incidents promptly.
-                  </p>
+                  <p>{t("continiousMonitoringTitlePara")}</p>
                 </div>
               </div>
             </div>

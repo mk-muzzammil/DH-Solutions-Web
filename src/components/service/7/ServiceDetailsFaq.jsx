@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -23,7 +25,7 @@ const ServiceDetailsFaq = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
                 <h2 className="faq__title title-anim">
-                  Frequently Asked Questions About Custom Software Development
+                  {t("FAQsoftwareDevelopmentTitle")}
                 </h2>
 
                 <div className="faq__list">
@@ -37,12 +39,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        What is custom software development?
+                        {t("FAQsQuestion1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Custom software development is the process of designing, building, and maintaining software applications that are tailored specifically to meet the unique needs of a business or organization.
-                        </p>
+                        <p>{t("FAQsAnswer1")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -51,12 +51,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        How long does it take to develop custom software?
+                        {t("FAQsQuestion2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          The timeline for custom software development varies based on project complexity, requirements, and the development methodology used. Generally, it can take from a few weeks to several months.
-                        </p>
+                        <p>{t("FAQsAnswer2")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -65,12 +63,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        What are the benefits of custom software?
+                        {t("FAQsQuestion3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Custom software provides solutions that are specifically designed to meet your business goals, improve efficiency, enhance user experience, and provide a competitive advantage.
-                        </p>
+                        <p>{t("FAQsAnswer3")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -79,12 +75,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        How do you ensure the quality of the software?
+                        {t("FAQsQuestion4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          We implement rigorous testing and quality assurance processes throughout the development lifecycle to ensure that the software meets high standards of quality, functionality, and performance.
-                        </p>
+                        <p>{t("FAQsAnswer4")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -93,12 +87,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        What support do you offer after development?
+                        {t("FAQsQuestion5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          We provide comprehensive post-development support, including software maintenance, updates, troubleshooting, and enhancements to ensure your software continues to meet your needs over time.
-                        </p>
+                        <p>{t("FAQsAnswer5")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>

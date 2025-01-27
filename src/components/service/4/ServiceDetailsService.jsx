@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Your Trusted Partner for Exceptional AI & Machine Learning Solutions
+                  {t("trustedPartnerForAI&MLtitle")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we provide AI and machine learning solutions tailored to meet your specific needs. Our expert team ensures that you receive innovative solutions that drive efficiency and effectiveness in your operations.
-                </p>
-                <p>
-                  Our commitment goes beyond just technology; we focus on leveraging data to deliver actionable insights that enhance decision-making. We create intelligent systems that not only automate processes but also adapt and improve continuously, helping you stay ahead in a competitive landscape.
-                </p>
+                <p>{t("trustedPartnerForAI&MLpara1")}</p>
+                <p>{t("trustedPartnerForAI&MLpara2")}</p>
               </div>
             </div>
           </div>

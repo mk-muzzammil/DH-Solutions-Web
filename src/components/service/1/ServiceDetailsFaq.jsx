@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -23,7 +25,7 @@ const ServiceDetailsFaq = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
                 <h2 className="faq__title title-anim">
-                  Product making for friendly users
+                  {t("servicesFaqTitle")}
                 </h2>
 
                 <div className="faq__list">
@@ -37,7 +39,7 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        Design should enrich our day
+                        {t("servicesFaqItem1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
                         <p>
@@ -54,7 +56,7 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        Bring their individual experience and creative
+                        {t("servicesFaqItem2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
                         <p>
@@ -70,7 +72,7 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        Human centred design to challenges
+                        {t("servicesFaqItem3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
                         <p>
@@ -87,7 +89,7 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        Design should enrich our day
+                        {t("servicesFaqItem4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
                         <p>
@@ -104,7 +106,7 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        Developing core web applications
+                        {t("servicesFaqItem5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
                         <p>

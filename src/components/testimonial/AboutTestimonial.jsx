@@ -7,8 +7,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import { useTranslations } from "next-intl";
 
 const AboutTestimonial = () => {
+  const t = useTranslations("");
   return (
     <>
       <section className="testimonial__area-2">
@@ -43,18 +45,16 @@ const AboutTestimonial = () => {
                       <div className="testimonial__slide">
                         <div className="testimonial__inner-2">
                           <h2 className="testimonial__title-2">
-                            Transformative Digital Presence
+                            {t("aboutTestimonialHeading")}
                           </h2>
                           <p className="testimonial__text-2">
-                            &quot;DH Solutions completely transformed our
-                            digital presence. They captured our brand&apos;s
-                            essence beautifully, delivering a seamless and
-                            impactful experience for our customers. Truly
-                            impressive work!&quot;
+                            &quot;{t("aboutTestimonialPara")}&quot;
                           </p>
-                          <h3 className="testimonial__author">Alex M.</h3>
+                          <h3 className="testimonial__author">
+                            {t("aboutTestimonialH3")}
+                          </h3>
                           <h4 className="testimonial__role">
-                            CEO of Global Retail Group
+                            {t("aboutTestimonialH4")}
                           </h4>
                         </div>
                       </div>

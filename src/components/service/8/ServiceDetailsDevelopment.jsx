@@ -3,13 +3,14 @@ import ThumbDev1 from "../../../../public/assets/imgs/thumb/left-top/8.svg";
 import ThumbDev2 from "../../../../public/assets/imgs/thumb/right-top/8.svg";
 import Image from "next/image";
 import animationCharCome from "@/lib/utils/animationCharCome";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsDevelopment = () => {
   const charAnim = useRef();
   useEffect(() => {
     animationCharCome(charAnim.current);
   }, []);
-  
+  const t = useTranslations();
   return (
     <>
       <section className="development__area">
@@ -19,27 +20,23 @@ const ServiceDetailsDevelopment = () => {
             <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title animation__char_come" ref={charAnim}>
-                  Comprehensive QA and Testing Services
+                  {t("comprehensiveQAtitle")}
                 </h2>
               </div>
             </div>
             <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
               <div className="development__wrapper">
                 <div className="development__content">
-                  <p>
-                    At DH Solutions, we offer thorough QA and testing services designed to ensure your software products meet the highest standards of quality. Our experienced team uses systematic testing methods to identify issues and improve performance, enhancing user satisfaction.
-                  </p>
-                  <p>
-                    We believe in a proactive approach to quality assurance, integrating testing processes early in the development cycle. This ensures that your applications are not only functional but also reliable and efficient, ultimately reducing time-to-market and enhancing overall product quality.
-                  </p>
+                  <p>{t("comprehensiveQApara1")}</p>
+                  <p>{t("comprehensiveQApara2")}</p>
                 </div>
                 <ul>
-                  <li>+ Functional Testing</li>
-                  <li>+ Performance Testing</li>
-                  <li>+ Security Testing</li>
-                  <li>+ Usability Testing</li>
-                  <li>+ Automated Testing Solutions</li>
-                  <li>+ Regression Testing</li>
+                  <li>+ {t("comprehensiveQlistElem1")}</li>
+                  <li>+ {t("comprehensiveQlistElem2")}</li>
+                  <li>+ {t("comprehensiveQlistElem3")}</li>
+                  <li>+ {t("comprehensiveQlistElem4")}</li>
+                  <li>+ {t("comprehensiveQlistElem5")}</li>
+                  <li>+ {t("comprehensiveQlistElem6")}</li>
                 </ul>
               </div>
             </div>
@@ -57,16 +54,13 @@ const ServiceDetailsDevelopment = () => {
           </div>
         </div>
       </section>
-       {/* Styled JSX for scoping CSS to this component */}
-       <style jsx>{`
-
-.col-xxl-8 {
-flex: 0 0 auto;
-width: 100%;
-}
-
-`}</style>
-
+      {/* Styled JSX for scoping CSS to this component */}
+      <style jsx>{`
+        .col-xxl-8 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      `}</style>
     </>
   );
 };

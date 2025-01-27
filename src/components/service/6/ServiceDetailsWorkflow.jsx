@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,44 +12,36 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Continuous Integration
+                    {t("continousIntegrationTitle")}
                   </h6>
-                  <p>
-                    Implementing automated builds and tests to ensure code quality and rapid feedback.
-                  </p>
+                  <p>{t("continousIntegrationPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Continuous Delivery
+                    {t("continousDeliveryTitle")}
                   </h6>
-                  <p>
-                    Streamlining the release process for reliable deployment of software updates.
-                  </p>
+                  <p>{t("continousDeliveryPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Monitoring and Feedback
+                    {t("monitringAndFeedbackTitle")}
                   </h6>
-                  <p>
-                    Utilizing monitoring tools to gather performance data and user feedback for continuous improvement.
-                  </p>
+                  <p>{t("monitringAndFeedbackPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Collaboration and Communication
+                    {t("collaborationAndCommunicationTitle")}
                   </h6>
-                  <p>
-                    Ensuring seamless collaboration between development and operations teams for efficient workflows.
-                  </p>
+                  <p>{t("collaborationAndCommunicationPara")}</p>
                 </div>
               </div>
             </div>

@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,48 +12,40 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Requirements <br />
-                    Analysis
+                    {t("requirementAnalysisTitle")} <br />
+                    {t("requirementAnalysisTitlePart")}
                   </h6>
-                  <p>
-                    We begin with a thorough analysis of project requirements to ensure the backend architecture aligns with the business objectives and technical constraints.
-                  </p>
+                  <p>{t("requirementAnalysisPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Database <br />
-                    Design
+                    {t("databaseDesginTitle")} <br />
+                    {t("databaseDesginTitlePart")}
                   </h6>
-                  <p>
-                    Crafting a robust database schema optimized for performance, scalability, and data integrity to support the application’s data needs.
-                  </p>
+                  <p>{t("databaseDesginPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    API <br />
-                    Development
+                    {t("apiDevlopmentTitle")} <br />
+                    {t("apiDevlopmentTitlePart")}
                   </h6>
-                  <p>
-                    Developing secure and scalable APIs that enable smooth communication between the frontend and backend, providing essential data and functionality.
-                  </p>
+                  <p>{t("apiDevlopmentPara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Testing & <br />
-                    Deployment
+                    {t("testingDeploymentTitle")} <br />
+                    {t("testingDeploymentTitlePart")}
                   </h6>
-                  <p>
-                    Rigorous testing ensures the backend performs as expected. We deploy to production environments and provide continuous monitoring and support.
-                  </p>
+                  <p>{t("testingDeploymentPara")}</p>
                 </div>
               </div>
             </div>

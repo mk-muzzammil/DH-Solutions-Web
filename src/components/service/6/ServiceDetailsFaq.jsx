@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -23,7 +25,7 @@ const ServiceDetailsFaq = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
                 <h2 className="faq__title title-anim">
-                  Frequently Asked Questions about DevOps
+                  {t("devopsFAQsTitle")}
                 </h2>
 
                 <div className="faq__list">
@@ -37,12 +39,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        What is DevOps?
+                        {t("devopsFAQsQuestion1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          DevOps is a set of practices that combine software development (Dev) and IT operations (Ops), aiming to shorten the development lifecycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
-                        </p>
+                        <p>{t("devopsFAQsAnswer1")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -51,12 +51,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        What are the benefits of implementing DevOps?
+                        {t("devopsFAQsQuestion2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Implementing DevOps leads to improved collaboration between teams, faster delivery of features, increased deployment success rates, reduced change failure rates, and more reliable software releases.
-                        </p>
+                        <p>{t("devopsFAQsAnswer2")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -65,12 +63,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        How does DevOps ensure quality in software delivery?
+                        {t("devopsFAQsQuestion3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          DevOps integrates automated testing and continuous integration practices that help catch defects early in the development process, leading to higher quality software delivery.
-                        </p>
+                        <p>{t("devopsFAQsAnswer3")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -79,12 +75,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        What tools are commonly used in DevOps?
+                        {t("devopsFAQsQuestion4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Commonly used tools in DevOps include Jenkins for CI &amp; CD, Docker for containerization, Kubernetes for orchestration, Git for version control, and monitoring tools like Prometheus and Grafana.
-                        </p>
+                        <p>{t("devopsFAQsAnswer4")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -93,12 +87,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        How can I start implementing DevOps in my organization?
+                        {t("devopsFAQsQuestion5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Start by fostering a culture of collaboration between development and operations teams, adopt automation tools for testing and deployment, and implement continuous integration/continuous delivery practices.
-                        </p>
+                        <p>{t("devopsFAQsAnswer5")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>

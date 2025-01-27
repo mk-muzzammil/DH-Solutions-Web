@@ -7,6 +7,7 @@ import Portfilio12 from "../../../public/assets/imgs/portfolio/1/2.jpg";
 import Portfilio13 from "../../../public/assets/imgs/portfolio/1/3.jpg";
 import Portfilio14 from "../../../public/assets/imgs/portfolio/1/4.jpg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,12 +73,13 @@ const DigitalAgencyPortfolio = () => {
       return () => tHero.revert();
     }
   }, []);
+  const t = useTranslations();
   return (
     <>
       <section className="portfolio__area pb-140">
         <div className="container">
           <div className="row top_row">
-            <h2 className="portfolio__text">work</h2>
+            <h2 className="portfolio__text">{t("workHeading")}</h2>
             <div className="portfolio__list-1">
               <div className="portfolio__item">
                 <Link href="portfolio-details">
@@ -178,8 +180,10 @@ const DigitalAgencyPortfolio = () => {
                   className="wc-btn-secondary btn-hover btn-item"
                   href="/portfolio"
                 >
-                  <span></span>View <br />
-                  all projects <i className="fa-solid fa-arrow-right"></i>
+                  <span></span>
+                  {t("viewBtn")} <br />
+                  {t("viewBtnPart")}
+                  <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>
             </div>

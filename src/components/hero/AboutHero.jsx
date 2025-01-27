@@ -3,12 +3,14 @@ import Link from "next/link.js";
 import Award from "../../../public/assets/imgs/about/award.svg";
 import Image from "next/image.js";
 import animationWordCome from "@/lib/utils/animationWordCome";
+import { useTranslations } from "next-intl";
 
 const AboutHero = () => {
   const wordAnim = useRef();
   useEffect(() => {
     animationWordCome(wordAnim.current);
   }, []);
+  const t = useTranslations();
   return (
     <>
       <section className="hero__about">
@@ -18,7 +20,7 @@ const AboutHero = () => {
             <div className="col-xxl-12">
               <div className="hero__about-content">
                 <h1 className="hero-title animation__word_come" ref={wordAnim}>
-                We’re a full-service creative and digital agency, partnering globally with some of the world’s largest brands to bring visionary ideas to life.
+                  {t("abotPageTitle")}
                 </h1>
                 <div className="hero__about-info">
                   <div className="hero__about-btn">
@@ -27,17 +29,14 @@ const AboutHero = () => {
                         href="/service-v5"
                         className="wc-btn-primary btn-hover btn-item"
                       >
-                        <span></span> Trends & <br />
-                        technology
+                        <span></span> {t("aboutPageBtn")} <br />
+                        {t("aboutPageBtnPart")}
                         <i className="fa-solid fa-arrow-right"></i>
                       </Link>
                     </div>
                   </div>
                   <div className="hero__about-text title-anim">
-                    <p>
-                      {
-                    "We collaborate with some of the world’s most iconic and successful brands, creating designs that are impactful, interactive, and easily recognizable. Our journey began in 2020, driven by a commitment to exceptional digital experiences."                      }
-                    </p>
+                    <p>{t("aboutPagePara")}</p>
                   </div>
                   <div className="hero__about-award">
                     <Image

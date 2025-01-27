@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Career2 from "../../../public/assets/imgs/career/2.jpg";
 import Career3 from "../../../public/assets/imgs/career/3.jpg";
 import Career4 from "../../../public/assets/imgs/career/4.jpg";
@@ -5,6 +6,7 @@ import Career5 from "../../../public/assets/imgs/career/5.jpeg";
 import Image from "next/image";
 
 const CareerGallery = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="career__gallery">
@@ -13,17 +15,11 @@ const CareerGallery = () => {
           <div className="row">
             <div className="col-xxl-12">
               <ul>
-                <li>Innovation</li>
-                <li>Transparency</li>
-                <li>Team Work</li>
+                <li>{t("innovation")}</li>
+                <li>{t("Transparency")}</li>
+                <li>{t("teamWork")}</li>
               </ul>
-              <p>
-                What sets us apart is what brings us together – a shared passion
-                for solving business challenges through strategy, design, and
-                engineering. We are the sum total of our team, their unique
-                perspectives, capabilities, and our ability to collaborate from
-                ideation to deployment.
-              </p>
+              <p>{t("para")}</p>
             </div>
           </div>
 

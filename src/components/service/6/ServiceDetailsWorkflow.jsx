@@ -8,33 +8,30 @@ const ServiceDetailsWorkflow = () => {
             <div className="row">
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
-                  <h6 className="workflow__title-6">
-                    Continuous Integration
-                  </h6>
+                  <h6 className="workflow__title-6">Continuous Integration</h6>
                   <p>
-                    Implementing automated builds and tests to ensure code quality and rapid feedback.
+                    Implementing automated builds and tests to ensure code
+                    quality and rapid feedback.
                   </p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
-                  <h6 className="workflow__title-6">
-                    Continuous Delivery
-                  </h6>
+                  <h6 className="workflow__title-6">Continuous Delivery</h6>
                   <p>
-                    Streamlining the release process for reliable deployment of software updates.
+                    Streamlining the release process for reliable deployment of
+                    software updates.
                   </p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
-                  <h6 className="workflow__title-6">
-                    Monitoring and Feedback
-                  </h6>
+                  <h6 className="workflow__title-6">Monitoring and Feedback</h6>
                   <p>
-                    Utilizing monitoring tools to gather performance data and user feedback for continuous improvement.
+                    Utilizing monitoring tools to gather performance data and
+                    user feedback for continuous improvement.
                   </p>
                 </div>
               </div>
@@ -45,7 +42,8 @@ const ServiceDetailsWorkflow = () => {
                     Collaboration and Communication
                   </h6>
                   <p>
-                    Ensuring seamless collaboration between development and operations teams for efficient workflows.
+                    Ensuring seamless collaboration between development and
+                    operations teams for efficient workflows.
                   </p>
                 </div>
               </div>

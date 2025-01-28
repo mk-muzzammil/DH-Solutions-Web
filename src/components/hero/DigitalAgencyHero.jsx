@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { SplitText } from "@/plugins";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const DigitalAgencyHero = () => {
   const heroTitle = useRef();
@@ -12,29 +12,39 @@ const DigitalAgencyHero = () => {
   const [isClient, setIsClient] = useState(false);
   const t = useTranslations();
 
+  const locale = useLocale();
+
   useEffect(() => {
     setIsClient(true);
 
-    let tHero = gsap.context(() => {
+    // *** Disable text splitting for Arabic ***
+    if (locale === "ar") {
+      // Return early → No GSAP / SplitText for Arabic
+      return;
+    }
+
+    // Otherwise, run the text splitting animations for non-AR languages
+    let ctx = gsap.context(() => {
       gsap.set(".custom-experience", {
         y: 50,
         opacity: 0,
       });
-      let split_hero__title = new SplitText(heroTitle.current, {
-        type: "chars",
-      });
-      let split_hero__subtitle = new SplitText(heroSubTitle.current, {
+
+      // Split the hero title and subtitle
+      let splitHeroTitle = new SplitText(heroTitle.current, { type: "chars" });
+      let splitHeroSubtitle = new SplitText(heroSubTitle.current, {
         type: "chars words",
       });
 
-      gsap.from(split_hero__title.chars, {
+      // Animate them in
+      gsap.from(splitHeroTitle.chars, {
         duration: 1,
         x: 70,
         autoAlpha: 0,
         stagger: 0.1,
       });
       gsap.from(
-        split_hero__subtitle.words,
+        splitHeroSubtitle.words,
         { duration: 1, x: 50, autoAlpha: 0, stagger: 0.05 },
         "-=1"
       );
@@ -50,8 +60,10 @@ const DigitalAgencyHero = () => {
         "-=1.5"
       );
     });
-    return () => tHero.revert();
-  }, []);
+
+    // Cleanup
+    return () => ctx.revert();
+  }, [locale]);
 
   return (
     <>
@@ -78,7 +90,7 @@ const DigitalAgencyHero = () => {
                 </Link>
                 <div className="custom-hero__title-wrapper">
                   <h1 className="custom-hero__title" ref={heroTitle}>
-                    {t("primaryHeadingfirst")} <br />
+                    {t("primaryHeadingfirst")}
                     {t("primaryHeadingSecond")}
                   </h1>
                   <p className="custom-hero__sub-title" ref={heroSubTitle}>

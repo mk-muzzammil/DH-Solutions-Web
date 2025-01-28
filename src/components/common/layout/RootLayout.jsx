@@ -7,17 +7,20 @@ import Cookies from "js-cookie";
 
 import allNavData from "../../../data/navData.json";
 import Preloader from "@/components/preloader/Preloader";
+
+// IMPORTANT: import CommonAnimation
 import CommonAnimation from "../CommonAnimation";
+
 import ScrollSmootherComponents from "../ScrollSmootherComponents";
 import CursorAnimation from "../CursorAnimation";
 import Switcher from "../Switcher";
 import ScrollTop from "../ScrollTop";
 import Header1 from "@/components/header/Header1";
-import Footer1 from "@/components/footer/Footer1";
 import Header2 from "@/components/header/Header2";
 import Header3 from "@/components/header/Header3";
 import Header4 from "@/components/header/Header4";
 import Header5 from "@/components/header/Header5";
+import Footer1 from "@/components/footer/Footer1";
 
 const HeaderContent = ({ header, navData }) => {
   switch (header) {
@@ -43,15 +46,14 @@ export default function RootLayout({
   header = "",
   defaultMode = "",
 }) {
-  // For color mode (dark/light)
   const [mode, setMode] = useState(defaultMode);
 
-  // 1) Initialize locale from cookie if it exists, otherwise "en"
+  // Locale and Messages
   const [locale, setLocale] = useState(() => {
     if (typeof window !== "undefined") {
       return Cookies.get("locale") || "en";
     }
-    return "en"; // fallback if SSR
+    return "en"; // fallback for SSR
   });
 
   const [messages, setMessages] = useState(null);
@@ -64,7 +66,7 @@ export default function RootLayout({
     setNavData(allNavData);
   }, []);
 
-  // 2) Load translation messages whenever locale changes
+  // Load translation messages whenever locale changes
   useEffect(() => {
     let isMounted = true;
     const fetchMessages = async () => {
@@ -79,13 +81,13 @@ export default function RootLayout({
     };
   }, [locale]);
 
-  // 3) Whenever locale changes, update the cookie
+  // Update locale cookie whenever it changes
   useEffect(() => {
     if (typeof window !== "undefined") {
       const currentCookie = Cookies.get("locale");
       if (locale && locale !== currentCookie) {
         Cookies.set("locale", locale, {
-          expires: 365, // 1 year
+          expires: 1,
           sameSite: "strict",
           path: "/",
         });
@@ -104,7 +106,7 @@ export default function RootLayout({
     }
   }, [mode]);
 
-  // RTL / LTR toggle
+  // RTL / LTR toggle and font-family for Arabic
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.setAttribute(
@@ -112,6 +114,13 @@ export default function RootLayout({
         locale === "ar" ? "rtl" : "ltr"
       );
       document.documentElement.setAttribute("lang", locale);
+
+      // Apply Tajawal font for Arabic
+      if (locale === "ar") {
+        document.body.style.fontFamily = "'Tajawal', serif";
+      } else {
+        document.body.style.fontFamily = "";
+      }
     }
   }, [locale]);
 
@@ -122,7 +131,8 @@ export default function RootLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <CommonAnimation>
+      {/* Pass the locale to CommonAnimation so it can skip text-splitting for Arabic */}
+      <CommonAnimation locale={locale}>
         <div className="has-smooth" id="has_smooth"></div>
         <ScrollSmootherComponents />
         <div className="cursor" id="team_cursor">
@@ -131,7 +141,6 @@ export default function RootLayout({
         <Preloader />
         <CursorAnimation cursor1={cursor1} cursor2={cursor2} />
 
-        {/* Switcher can now call setLocale, which sets the cookie */}
         <Switcher
           setMode={setMode}
           mode={mode}

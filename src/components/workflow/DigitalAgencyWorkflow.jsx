@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
+import { useTranslations } from "next-intl";
 
 const DigitalAgencyWorkflow = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const DigitalAgencyWorkflow = () => {
       return () => tHero.revert();
     }
   }, []);
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area">
@@ -40,8 +42,12 @@ const DigitalAgencyWorkflow = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
-                <h2 className="sec-sub-title title-anim">Workflow</h2>
-                <h3 className="sec-title title-anim">How we work</h3>
+                <h2 className="sec-sub-title title-anim">
+                  {t("workFlowHeading")}
+                </h2>
+                <h3 className="sec-title title-anim">
+                  {t("howWeWorkHeading")}
+                </h3>
               </div>
             </div>
 
@@ -68,63 +74,73 @@ const DigitalAgencyWorkflow = () => {
                   },
                 }}
               >
+                <div className="swiper-wrapper">
+                  <SwiperSlide>
+                    <div className="workflow__slide fade_left">
+                      <h4 className="workflow__step">{t("step01")}</h4>
+                      <h5 className="workflow__number">01</h5>
+                      <h6 className="workflow__title">
+                        {t("audienceResearchHeading")}
+                      </h6>
+                      <p>{t("audienceResearchPara")}</p>
+                    </div>
+                  </SwiperSlide>
 
-<div className="swiper-wrapper">
-  <SwiperSlide>
-    <div className="workflow__slide fade_left">
-      <h4 className="workflow__step">step 01</h4>
-      <h5 className="workflow__number">01</h5>
-      <h6 className="workflow__title">Audience Research</h6>
-      <p>Understanding the target audience to align strategies with business goals.</p>
-    </div>
-  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="workflow__slide fade_left">
+                      <h4 className="workflow__step">{t("step02")}</h4>
+                      <h5 className="workflow__number">02</h5>
+                      <h6 className="workflow__title">
+                        {t("planningSketchingHeading")}
+                      </h6>
+                      <p>{t("planningSketchingPara")}</p>
+                    </div>
+                  </SwiperSlide>
 
-  <SwiperSlide>
-    <div className="workflow__slide fade_left">
-      <h4 className="workflow__step">step 02</h4>
-      <h5 className="workflow__number">02</h5>
-      <h6 className="workflow__title">Planning & Sketching</h6>
-      <p>Developing a blueprint with key steps and objectives in mind.</p>
-    </div>
-  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="workflow__slide fade_left">
+                      <h4 className="workflow__step">{t("step03")}</h4>
+                      <h5 className="workflow__number">03</h5>
+                      <h6 className="workflow__title">
+                        {t("designCustomizationHeading")}
+                      </h6>
+                      <p>{t("designCustomizationPara")}</p>
+                    </div>
+                  </SwiperSlide>
 
-  <SwiperSlide>
-    <div className="workflow__slide fade_left">
-      <h4 className="workflow__step">step 03</h4>
-      <h5 className="workflow__number">03</h5>
-      <h6 className="workflow__title">Design Customization</h6>
-      <p>Tailoring designs to create a unique and memorable brand experience.</p>
-    </div>
-  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="workflow__slide fade_left">
+                      <h4 className="workflow__step">{t("step04")}</h4>
+                      <h5 className="workflow__number">04</h5>
+                      <h6 className="workflow__title">
+                        {t("prototypeDevelopmentHeading")}
+                      </h6>
+                      <p>{t("prototypeDevelopmentPara")}</p>
+                    </div>
+                  </SwiperSlide>
 
-  <SwiperSlide>
-    <div className="workflow__slide fade_left">
-      <h4 className="workflow__step">step 04</h4>
-      <h5 className="workflow__number">04</h5>
-      <h6 className="workflow__title">Prototype Development</h6>
-      <p>Creating a prototype to visualize and test core functions.</p>
-    </div>
-  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className="workflow__slide fade_left">
+                      <h4 className="workflow__step">{t("step05")}</h4>
+                      <h5 className="workflow__number">05</h5>
+                      <h6 className="workflow__title">
+                        {t("userTestingFeedbackHeading")}
+                      </h6>
+                      <p>{t("userTestingFeedbackPara")}</p>
+                    </div>
+                  </SwiperSlide>
 
-  <SwiperSlide>
-    <div className="workflow__slide fade_left">
-      <h4 className="workflow__step">step 05</h4>
-      <h5 className="workflow__number">05</h5>
-      <h6 className="workflow__title">User Testing & Feedback</h6>
-      <p>Engaging users to gather feedback and refine the experience.</p>
-    </div>
-  </SwiperSlide>
-
-  <SwiperSlide>
-    <div className="workflow__slide fade_left">
-      <h4 className="workflow__step">step 06</h4>
-      <h5 className="workflow__number">06</h5>
-      <h6 className="workflow__title">Final Review & Launch</h6>
-      <p>Conducting a final review to ensure readiness before launch.</p>
-    </div>
-  </SwiperSlide>
-</div>
-
+                  <SwiperSlide>
+                    <div className="workflow__slide fade_left">
+                      <h4 className="workflow__step">{t("step06")}</h4>
+                      <h5 className="workflow__number">06</h5>
+                      <h6 className="workflow__title">
+                        {t("finalReviewLaunchHeaidng")}
+                      </h6>
+                      <p>{t("finalReviewLaunchPara")}</p>
+                    </div>
+                  </SwiperSlide>
+                </div>
               </Swiper>
             </div>
           </div>

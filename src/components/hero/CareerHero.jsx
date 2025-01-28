@@ -1,12 +1,14 @@
 import animationCharCome from "@/lib/utils/animationCharCome";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const CareerHero = () => {
   const charAnim = useRef();
   useEffect(() => {
     animationCharCome(charAnim.current);
   }, []);
+  const t = useTranslations();
   return (
     <>
       <section className="career__top">
@@ -19,7 +21,7 @@ const CareerHero = () => {
                     className="sec-title-2 animation__char_come"
                     ref={charAnim}
                   >
-                    Join our team & let’s work together
+                    {t("joinOurTeamHeading")}
                   </h2>
                 </div>
               </div>
@@ -29,9 +31,10 @@ const CareerHero = () => {
                     href="/contact"
                     className="wc-btn-secondary btn-hover btn-item"
                   >
-                    <span></span> Lets Talk
+                    <span></span> {t("letsTalkBtn")}
                     <br />
-                    Us <i className="fa-solid fa-arrow-right"></i>
+                    {t("letsTalkBtnPart")}{" "}
+                    <i className="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
               </div>

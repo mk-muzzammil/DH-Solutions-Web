@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -23,7 +25,7 @@ const ServiceDetailsFaq = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
                 <h2 className="faq__title title-anim">
-                  Frequently Asked Questions about AI & ML Solutions
+                  {t("FAQsAboutMI&MLTitle")}
                 </h2>
 
                 <div className="faq__list">
@@ -37,12 +39,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        How does AI enhance user experience?
+                        {t("FAQsAboutMI&MLqusetion1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          AI enhances user experience by analyzing user behavior and preferences, allowing for personalized interactions and content that resonate with individual users.
-                        </p>
+                        <p>{t("FAQsAboutMI&MLanswer1")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -51,12 +51,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        What role does machine learning play in AI applications?
+                        {t("FAQsAboutMI&MLqusetion2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Machine learning algorithms enable AI applications to learn from data, improving accuracy and effectiveness over time by adapting to new information and patterns.
-                        </p>
+                        <p>{t("FAQsAboutMI&MLanswer2")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -65,12 +63,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        How do AI solutions ensure data privacy?
+                        {t("FAQsAboutMI&MLqusetion3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Our AI solutions prioritize data privacy by implementing strong encryption, anonymization techniques, and adhering to industry standards for data protection.
-                        </p>
+                        <p>{t("FAQsAboutMI&MLanswer3")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -79,12 +75,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        Can AI help in predictive analytics?
+                        {t("FAQsAboutMI&MLqusetion4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Yes, AI is instrumental in predictive analytics, as it can process vast amounts of data to identify trends and make accurate predictions that inform decision-making.
-                        </p>
+                        <p>{t("FAQsAboutMI&MLanswer4")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -93,12 +87,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        How does AI improve application performance?
+                        {t("FAQsAboutMI&MLqusetion5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          AI optimizes application performance by utilizing real-time analytics to monitor user interactions, enabling developers to make data-driven improvements that enhance speed and efficiency.
-                        </p>
+                        <p>{t("FAQsAboutMI&MLanswer5")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>

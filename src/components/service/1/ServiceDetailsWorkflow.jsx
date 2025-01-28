@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,48 +12,40 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Planning and <br />
-                    Sketching
+                    {t("serviceDetailsWorkflowHeading")} <br />
+                    {t("serviceDetailsWorkflowHeadingPart")}
                   </h6>
-                  <p>
-                    We begin with a detailed planning and sketching phase to ensure that all aspects of the design meet our clients expectations and project goals.
-                  </p>
+                  <p>{t("serviceDetailsWorkflowPAra")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Collaborative <br />
-                    Teamwork
+                    {t("serviceDetailsWorkflowHeading2")} <br />
+                    {t("serviceDetailsWorkflowHeading2Part")}
                   </h6>
-                  <p>
-                    Our talented team collaborates closely throughout the project, ensuring innovative solutions and designs that are both modern and user-friendly.
-                  </p>
+                  <p>{t("serviceDetailsWorkflowHeading2Para")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Flowchart and <br />
-                    Wireframe Development
+                    {t("serviceDetailsWorkflowHeading3")} <br />
+                    {t("serviceDetailsWorkflowHeading3Part")}
                   </h6>
-                  <p>
-                    We create detailed flowcharts and wireframes that serve as a blueprint for the user interface, ensuring a seamless navigation experience.
-                  </p>
+                  <p>{t("serviceDetailsWorkflowHeading3Part")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    User Experience <br />
-                    Testing
+                    {t("serviceDetailsWorkflowHeading4")} <br />
+                    {t("serviceDetailsWorkflowHeading4Part")}
                   </h6>
-                  <p>
-                    Rigorous user experience testing allows us to gather valuable feedback, ensuring our designs are intuitive and meet user needs.
-                  </p>
+                  <p>{t("serviceDetailsWorkflowHeading4Para")}</p>
                 </div>
               </div>
             </div>

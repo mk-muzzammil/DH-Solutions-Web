@@ -1,4 +1,4 @@
-"use client";
+import { useTranslations } from "next-intl";
 import Career2 from "../../../public/assets/imgs/career/2.jpg";
 import Career3 from "../../../public/assets/imgs/career/3.jpg";
 import Career4 from "../../../public/assets/imgs/career/4.jpg";
@@ -8,7 +8,6 @@ import { useTranslations } from "use-intl";
 
 const CareerGallery = () => {
   const t = useTranslations();
-
   return (
     <>
       <section className="career__gallery">
@@ -17,11 +16,11 @@ const CareerGallery = () => {
           <div className="row">
             <div className="col-xxl-12">
               <ul>
-                <li>{t("careerGalleryInnovation")}</li>
-                <li>{t("careerGalleryTransparency")}</li>
-                <li>{t("careerGalleryTeamWork")}</li>
+                <li>{t("innovation")}</li>
+                <li>{t("Transparency")}</li>
+                <li>{t("teamWork")}</li>
               </ul>
-              <p>{t("careerGalleryPara")}</p>
+              <p>{t("para")}</p>
             </div>
           </div>
 

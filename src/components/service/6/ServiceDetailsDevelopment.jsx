@@ -3,12 +3,15 @@ import ThumbDev1 from "../../../../public/assets/imgs/thumb/left-top/6.svg";
 import ThumbDev2 from "../../../../public/assets/imgs/thumb/right-top/6.svg";
 import Image from "next/image";
 import animationCharCome from "@/lib/utils/animationCharCome";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsDevelopment = () => {
   const charAnim = useRef();
   useEffect(() => {
     animationCharCome(charAnim.current);
   }, []);
+
+  const t = useTranslations();
 
   return (
     <>
@@ -19,27 +22,23 @@ const ServiceDetailsDevelopment = () => {
             <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title animation__char_come" ref={charAnim}>
-                  Expert DevOps Services
+                  {t("expertDevopsTitile")}
                 </h2>
               </div>
             </div>
             <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
               <div className="development__wrapper">
                 <div className="development__content">
-                  <p>
-                    At DH Solutions, we specialize in providing comprehensive DevOps services that streamline your development processes. Our expert team focuses on automation, collaboration, and continuous delivery to help you achieve rapid and reliable software deployment.
-                  </p>
-                  <p>
-                    We understand that every organization has unique challenges. Our tailored solutions leverage the latest tools and methodologies, ensuring that your team can deliver high-quality applications efficiently and effectively.
-                  </p>
+                  <p>{t("expertDevopsPara1")}</p>
+                  <p>{t("expertDevopsPara2")}</p>
                 </div>
                 <ul>
-                  <li>+ Continuous Integration/Continuous Deployment (CI/CD)</li>
-                  <li>+ Infrastructure as Code (IaC)</li>
-                  <li>+ Cloud Services Management (AWS, Azure, GCP)</li>
-                  <li>+ Monitoring and Logging</li>
-                  <li>+ Automated Testing</li>
-                  <li>+ Security and Compliance</li>
+                  <li>+ {t("expertDevopsListElem1")}</li>
+                  <li>+ {t("expertDevopsListElem2")}</li>
+                  <li>+ {t("expertDevopsListElem3")}</li>
+                  <li>+ {t("expertDevopsListElem4")}</li>
+                  <li>+ {t("expertDevopsListElem5")}</li>
+                  <li>+ {t("expertDevopsListElem6")}</li>
                 </ul>
               </div>
             </div>
@@ -57,16 +56,13 @@ const ServiceDetailsDevelopment = () => {
           </div>
         </div>
       </section>
-       {/* Styled JSX for scoping CSS to this component */}
-       <style jsx>{`
-
-.col-xxl-8 {
-flex: 0 0 auto;
-width: 100%;
-}
-
-`}</style>
-
+      {/* Styled JSX for scoping CSS to this component */}
+      <style jsx>{`
+        .col-xxl-8 {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+      `}</style>
     </>
   );
 };

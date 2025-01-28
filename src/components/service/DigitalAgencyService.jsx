@@ -12,6 +12,7 @@ import Service17 from "../../../public/assets/imgs/service/1/7.jpeg";
 import Service18 from "../../../public/assets/imgs/service/1/8.png";
 import Service19 from "../../../public/assets/imgs/service/1/9.jpg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,6 +116,7 @@ const DigitalAgencyService = () => {
       return () => tHero.revert();
     }
   }, []);
+  const t = useTranslations();
   return (
     <>
       <section className="service__area pt-110 pb-150">
@@ -122,19 +124,19 @@ const DigitalAgencyService = () => {
           <div className="row">
             <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
               <div className="sec-title-wrapper wrap">
-                <h2 className="sec-sub-title title-anim">service</h2>
+                <h2 className="sec-sub-title title-anim">{t("service")}</h2>
                 <h3 className="sec-title title-anim">
-                  Solution we <br />
-                  provide
+                  {t("sloutionWeProvideTitle")} <br />
+                  {t("sloutionWeProvideTitlePart")}
                 </h3>
               </div>
             </div>
             <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
               <div className="service__top-text text-anim">
                 <p>
-                  With every single one of our clients we bring forth a deep
-                  passion for <span>creative problem solving innovations</span>{" "}
-                  forward thinking brands boundaries
+                  {t("sloutionWeProvideTitlePara")}{" "}
+                  <span>{t("sloutionWeProvideTitleParaPart")}</span>{" "}
+                  {t("sloutionWeProvideTitleParaPart2")}
                 </p>
               </div>
             </div>
@@ -145,8 +147,9 @@ const DigitalAgencyService = () => {
                     href="/service-v5"
                     className="btn-item wc-btn-secondary btn-hover"
                   >
-                    <span></span> View <br />
-                    all services <i className="fa-solid fa-arrow-right"></i>
+                    <span></span> {t("btnText")} <br />
+                    {t("btnTextPart")}{" "}
+                    <i className="fa-solid fa-arrow-right"></i>
                   </Link>
                 </div>
               </div>
@@ -257,7 +260,7 @@ const DigitalAgencyService = () => {
                     }
                   />
 
-                   <Image
+                  <Image
                     priority
                     width={280}
                     style={{ height: "auto" }}
@@ -269,7 +272,6 @@ const DigitalAgencyService = () => {
                         : "service__img img-3"
                     }
                   />
-
 
                   <span
                     className={
@@ -300,7 +302,7 @@ const DigitalAgencyService = () => {
                     }
                   ></span>
 
-                    <span
+                  <span
                     className={
                       activeShape == 5
                         ? "shapes shape-box-4 current"
@@ -308,7 +310,7 @@ const DigitalAgencyService = () => {
                     }
                   ></span>
 
-                    <span
+                  <span
                     className={
                       activeShape == 6
                         ? "shapes shape-box-4 current"
@@ -316,7 +318,7 @@ const DigitalAgencyService = () => {
                     }
                   ></span>
 
-                    <span
+                  <span
                     className={
                       activeShape == 7
                         ? "shapes shape-box-4 current"
@@ -324,7 +326,7 @@ const DigitalAgencyService = () => {
                     }
                   ></span>
 
-                    <span
+                  <span
                     className={
                       activeShape == 8
                         ? "shapes shape-box-4 current"
@@ -332,7 +334,7 @@ const DigitalAgencyService = () => {
                     }
                   ></span>
 
-                    <span
+                  <span
                     className={
                       activeShape == 9
                         ? "shapes shape-box-4 current"
@@ -354,13 +356,11 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Front End Development
+                          {t("frontendDevelopmentTitle")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions creates responsive, user-friendly interfaces for web and mobile using modern technologies.
-                        </p>
+                        <p>{t("frontendDevelopmentPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -381,14 +381,11 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Backend Development 
-                          
+                          {t("backendDevelopmentTitle")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions builds secure and scalable server-side applications with Node.js, Python, and SQL.
-                        </p>
+                        <p>{t("backendDevelopmentPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -399,7 +396,7 @@ const DigitalAgencyService = () => {
                   </Link>
 
                   <Link
-                   href="/service-details-3"
+                    href="/service-details-3"
                     className={activeList == 3 ? "active" : ""}
                     data-service="3"
                   >
@@ -409,14 +406,13 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Mobile App <br />
-                          Development
+                          {t("mobileAppDevelopmentTitle")}
+                          <br />
+                          {t("mobileAppDevelopmentTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions develops high-performance mobile apps for iOS and Android platforms.
-                        </p>
+                        <p>{t("mobileAppDevelopmentPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -437,14 +433,12 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          AI/ML <br/>
-                          Solutions
+                          {t("aImLsolutionsTitle")} <br />
+                          {t("aImLsolutionsTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions leverages AI/ML to drive automation and enhance business decision-making.
-                        </p>
+                        <p>{t("aImLsolutionsTitlePara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -455,7 +449,7 @@ const DigitalAgencyService = () => {
                   </Link>
 
                   <Link
-                   href="/service-details-5"
+                    href="/service-details-5"
                     className={activeList == 5 ? "active" : ""}
                     data-service="5"
                   >
@@ -465,14 +459,12 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Cyber <br/>
-                          Security
+                          {t("cyberTitle")} <br />
+                          {t("cyberTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions provides robust cybersecurity services to protect digital assets from threats.
-                        </p>
+                        <p>{t("cyberPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -493,14 +485,12 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          DevOps <br/>
-                          Solutions
+                          {t("devopsSolutionTitle")} <br />
+                          {t("devopsSolutionTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions streamlines development and deployment processes through effective DevOps practices.
-                        </p>
+                        <p>{t("devopsSolutionPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -521,14 +511,12 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Custom Software <br/>
-                          Development
+                          {t("customSoftwareDevlopmentTitle")} <br />
+                          {t("customSoftwareDevlopmentTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions delivers tailored software solutions to meet specific business requirements.
-                        </p>
+                        <p>{t("customSoftwareDevlopmentPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -549,14 +537,12 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Quality Assurance & <br/>
-                          Testing
+                          {t("QualityAssuranceTitle")} <br />
+                          {t("QualityAssuranceTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions ensures software quality and reliability through comprehensive QA and testing services.
-                        </p>
+                        <p>{t("QualityAssuranceTitlePara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -577,14 +563,12 @@ const DigitalAgencyService = () => {
                       </div>
                       <div className="service__title-wrapper">
                         <h4 className="service__title">
-                          Computer <br/>
-                          Vision
+                          {t("computerVisionTitle")} <br />
+                          {t("computerVisionTitlePart")}
                         </h4>
                       </div>
                       <div className="service__text">
-                        <p>
-                        DH Solutions offers advanced computer vision solutions for automated visual data analysis.
-                        </p>
+                        <p>{t("computerVisionPara")}</p>
                       </div>
                       <div className="service__link">
                         <p>
@@ -593,8 +577,6 @@ const DigitalAgencyService = () => {
                       </div>
                     </div>
                   </Link>
-
-
                 </div>
               </div>
             </div>

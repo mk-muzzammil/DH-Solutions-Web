@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png"; // Adjust this image if needed
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Your Trusted Partner for Exceptional DevOps Services
+                  {t("trustedPartnerDevopsTitle")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we provide comprehensive DevOps services designed to streamline your development and operational processes. Our experienced team focuses on automation, continuous integration, and delivery to ensure faster time-to-market for your applications.
-                </p>
-                <p>
-                  Our commitment extends beyond just technology; we aim to foster collaboration between your development and operations teams. By leveraging best practices and innovative tools, we enhance your software delivery lifecycle, improve quality, and boost overall productivity.
-                </p>
+                <p>{t("trustedPartnerDevopsPara1")}</p>
+                <p>{t("trustedPartnerDevopsPara2")}</p>
               </div>
             </div>
           </div>

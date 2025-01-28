@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Reliable and Scalable Backend Development Services
+                  {t("relaibleBackendDevlopmentTitle")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we specialize in backend development that ensures reliability, scalability, and security for your digital platforms. Our team builds robust systems to support your applications, managing everything from data handling to server logic with efficiency.
-                </p>
-                <p>
-                  Our solutions are designed to support business growth, providing seamless integrations with third-party APIs and optimizing performance for faster load times. We bring expertise in a wide range of backend frameworks and databases, creating a strong foundation for your applications.
-                </p>
+                <p>{t("relaibleBackendDevlopmentPara1")}</p>
+                <p>{t("relaibleBackendDevlopmentPara2")}</p>
               </div>
             </div>
           </div>

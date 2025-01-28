@@ -4,11 +4,10 @@ import ThumbFooter from "../../../public/assets/imgs/thumb/footer.jpg";
 import FooterLogoWhite from "../../../public/assets/imgs/logo/footer-logo-white.png";
 import footer from "../../../public/assets/imgs/footer/footer.jpg";
 import Image from "next/image";
-import { useTranslations } from "use-intl";
+import { useTranslations } from "next-intl";
 
 export default function Footer3() {
   const t = useTranslations();
-
   return (
     <>
       <footer className="footer__area">
@@ -121,7 +120,7 @@ export default function Footer3() {
                   <div className="footer__copyright">
                     <p>
                       {t("footerCopyRight")}{" "}
-                      <a href="https://dhsol.net/" target="_blank">
+                      <a href="https:/dhsol.net/" target="_blank">
                         {t("footerCopyLinkName")}
                       </a>
                     </p>

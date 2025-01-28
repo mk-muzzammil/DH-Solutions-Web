@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -23,7 +25,7 @@ const ServiceDetailsFaq = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
                 <h2 className="faq__title title-anim">
-                  Cybersecurity Services FAQs
+                  {t("cyberSecurityFAQsTitle")}
                 </h2>
 
                 <div className="faq__list">
@@ -37,15 +39,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        What is cybersecurity?
+                        {t("cyberSecurityFAQsQuestion1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Cybersecurity refers to the practice of protecting
-                          systems, networks, and programs from digital attacks,
-                          which aim to access, change, or destroy sensitive
-                          information.
-                        </p>
+                        <p>{t("cyberSecurityFAQsAnswer1")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -54,15 +51,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        Why do I need cybersecurity services?
+                        {t("cyberSecurityFAQsQuestion2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          With the increasing number of cyber threats, it is
-                          crucial to protect your business data and systems
-                          from attacks that can lead to significant financial
-                          and reputational damage.
-                        </p>
+                        <p>{t("cyberSecurityFAQsAnswer2")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -71,15 +63,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        How can DH Solutions help with cybersecurity?
+                        {t("cyberSecurityFAQsQuestion3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          DH Solutions provides a range of cybersecurity
-                          services, including threat assessment, incident
-                          response, and network security, tailored to your
-                          organization&apos;s unique needs.
-                        </p>
+                        <p>{t("cyberSecurityFAQsAnswer3")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -88,15 +75,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        What types of cyber threats exist?
+                        {t("cyberSecurityFAQsQuestion4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Common cyber threats include malware, phishing,
-                          ransomware, and denial-of-service attacks, each
-                          targeting different vulnerabilities in systems and
-                          networks.
-                        </p>
+                        <p>{t("cyberSecurityFAQsAnswer4")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -105,16 +87,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        How often should I update my cybersecurity measures?
+                        {t("cyberSecurityFAQsQuestion5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Regular updates are essential, as cyber threats are
-                          constantly evolving. It is recommended to review and
-                          update your security measures at least annually, or
-                          whenever a significant change occurs within your
-                          organization.
-                        </p>
+                        <p>{t("cyberSecurityFAQsAnswer5")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>

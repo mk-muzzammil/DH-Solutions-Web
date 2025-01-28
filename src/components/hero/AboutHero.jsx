@@ -13,7 +13,7 @@ const AboutHero = () => {
   useEffect(() => {
     animationWordCome(wordAnim.current);
   }, []);
-
+  const t = useTranslations();
   return (
     <>
       <section className="hero__about">
@@ -23,7 +23,7 @@ const AboutHero = () => {
             <div className="col-xxl-12">
               <div className="hero__about-content">
                 <h1 className="hero-title animation__word_come" ref={wordAnim}>
-                  {t("aboutHeroHeading")}
+                  {t("abotPageTitle")}
                 </h1>
                 <div className="hero__about-info">
                   <div className="hero__about-btn">
@@ -32,13 +32,14 @@ const AboutHero = () => {
                         href="/service-v5"
                         className="wc-btn-primary btn-hover btn-item"
                       >
-                        <span></span> {t("aboutHeroBtn")}{" "}
+                        <span></span> {t("aboutPageBtn")} <br />
+                        {t("aboutPageBtnPart")}
                         <i className="fa-solid fa-arrow-right"></i>
                       </Link>
                     </div>
                   </div>
                   <div className="hero__about-text title-anim">
-                    <p>{t("aboutHeroParagraph2")}</p>
+                    <p>{t("aboutPagePara")}</p>
                   </div>
                   <div className="hero__about-award">
                     <Image

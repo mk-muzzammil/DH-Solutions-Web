@@ -2,11 +2,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../public/assets/imgs/thumb/faq.jpg";
 import Image from "next/image";
-import { useTranslations } from "use-intl";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
   const t = useTranslations();
-
   return (
     <>
       <section className="faq__area">

@@ -13,8 +13,6 @@ import { useTranslations } from "next-intl";
 gsap.registerPlugin(ScrollTrigger);
 
 const DigitalAgencyPortfolio = () => {
-  const t = useTranslations();
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       let device_width = window.innerWidth;
@@ -75,15 +73,13 @@ const DigitalAgencyPortfolio = () => {
       return () => tHero.revert();
     }
   }, []);
-
+  const t = useTranslations();
   return (
     <>
       <section className="portfolio__area pb-140">
         <div className="container">
           <div className="row top_row">
-            <h2 className="portfolio__text">
-              {t("digitalAgencyPortfolioWork")}
-            </h2>
+            <h2 className="portfolio__text">{t("workHeading")}</h2>
             <div className="portfolio__list-1">
               <div className="portfolio__item">
                 <Link href="/portfolio-details">
@@ -182,7 +178,8 @@ const DigitalAgencyPortfolio = () => {
                   href="/portfolio"
                 >
                   <span></span>
-                  {t("digitalAgencyPortfolioViewAll")}{" "}
+                  {t("viewBtn")} <br />
+                  {t("viewBtnPart")}
                   <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>

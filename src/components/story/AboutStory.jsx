@@ -1,14 +1,12 @@
-"use client";
+import { useTranslations } from "next-intl";
 import Story1 from "../../../public/assets/imgs/story/1.jpg";
 import Story2 from "../../../public/assets/imgs/story/2.png";
 import Story3 from "../../../public/assets/imgs/story/3.jpg";
 import Story4 from "../../../public/assets/imgs/story/4.jpg";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 
 const AboutStory = () => {
   const t = useTranslations();
-
   return (
     <>
       <section className="story__area">
@@ -16,20 +14,20 @@ const AboutStory = () => {
           <span className="line-3"></span>
           <div className="sec-title-wrapper">
             <div className="from-text">
-              {t("aboutStoryFrom")} <span>{t("aboutStoryYear")}</span>
+              {t("from")} <span>2020</span>
             </div>
 
             <div className="row">
               <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
                 <h2 className="sec-sub-title title-anim">
-                  {t("aboutStorySub")}
+                  {t("dhSolutionHeading")}
                 </h2>
-                <h3 className="sec-title title-anim">{t("aboutStoryTitle")}</h3>
+                <h3 className="sec-title title-anim">{t("storyHeading")}</h3>
               </div>
               <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
                 <div className="story__text">
-                  <p>{t("aboutStoryPara1")}</p>
-                  <p>{t("aboutStoryPara2")}</p>
+                  <p>{t("dhStoryPara1")}</p>
+                  <p>{t("dhStoryPara2")}</p>
                 </div>
               </div>
             </div>

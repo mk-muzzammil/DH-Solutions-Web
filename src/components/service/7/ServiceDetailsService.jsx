@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Your Trusted Partner for Exceptional Custom Software Development Services
+                  {t("trustedPartnerHeading")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we provide custom software development solutions tailored to your specific business needs. Our experienced team is dedicated to delivering robust, scalable applications that enhance your operational efficiency.
-                </p>
-                <p>
-                  We understand that each business is unique, which is why we focus on developing solutions that effectively address your challenges. Our commitment goes beyond just development; we aim to build long-lasting partnerships that drive your success and foster innovation.
-                </p>
+                <p>{t("trustedPartnerPara1")}</p>
+                <p>{t("trustedPartnerPara2")}</p>
               </div>
             </div>
           </div>

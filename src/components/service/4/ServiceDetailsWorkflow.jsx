@@ -1,4 +1,7 @@
+import { useTranslations } from "next-intl";
+
 const ServiceDetailsWorkflow = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="workflow__area-6">
@@ -9,48 +12,41 @@ const ServiceDetailsWorkflow = () => {
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Data Collection and <br />
-                    Preparation
+                    {t("dataCollectionAndPerperationTitle")}
+                    <br />
+                    {t("dataCollectionAndPerperationTitlePart")}
                   </h6>
-                  <p>
-                    Gathering relevant data from various sources and preparing it for analysis is crucial. This step ensures that the data is clean, structured, and ready for model training.
-                  </p>
+                  <p>{t("dataCollectionAndPerperationTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Model Development <br />
-                    and Training
+                    {t("modelDevelopmentandTraninigTitle")} <br />
+                    {t("modelDevelopmentandTraninigTitlePart")}
                   </h6>
-                  <p>
-                    Utilizing advanced algorithms and frameworks, we develop and train machine learning models to identify patterns and make predictions based on the prepared data.
-                  </p>
+                  <p>{t("modelDevelopmentandTraninigTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Model Evaluation <br />
-                    and Tuning
+                    {t("modelElevationAndTuningTitle")} <br />
+                    {t("modelElevationAndTuningTitlePart")}
                   </h6>
-                  <p>
-                    After training, we rigorously evaluate the models using various metrics. This step includes fine-tuning parameters to enhance performance and ensure reliability.
-                  </p>
+                  <p>{t("modelElevationAndTuningTitlePara")}</p>
                 </div>
               </div>
 
               <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-3">
                 <div className="workflow__slide-6">
                   <h6 className="workflow__title-6">
-                    Deployment and <br />
-                    Monitoring
+                    {t("deploymrntAndMonitoringTitle")} <br />
+                    {t("deploymrntAndMonitoringTitlePart")}
                   </h6>
-                  <p>
-                    Once the model meets performance standards, it is deployed into production. Continuous monitoring ensures its effectiveness and allows for timely updates based on new data and feedback.
-                  </p>
+                  <p>{t("deploymrntAndMonitoringTitlePara")}</p>
                 </div>
               </div>
             </div>

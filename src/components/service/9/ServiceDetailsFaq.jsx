@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -23,7 +25,7 @@ const ServiceDetailsFaq = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
                 <h2 className="faq__title title-anim">
-                  Frequently Asked Questions about Computer Vision Services
+                  {t("computerVisionFAQsTitle")}
                 </h2>
 
                 <div className="faq__list">
@@ -37,15 +39,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        What is Computer Vision?
+                        {t("computerVisionFAQsQuestion1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Computer Vision is a field of artificial intelligence
-                          that enables computers to interpret and understand the
-                          visual world. It involves the extraction, analysis, and
-                          understanding of information from images and videos.
-                        </p>
+                        <p>{t("computerVisionFAQsAnswer1")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -54,15 +51,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        What industries can benefit from Computer Vision?
+                        {t("computerVisionFAQsQuestion2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Various industries such as healthcare, retail, automotive,
-                          and agriculture can leverage computer vision for tasks
-                          like quality inspection, automated surveillance, and
-                          inventory management.
-                        </p>
+                        <p>{t("computerVisionFAQsAnswer2")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -71,15 +63,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        How can Computer Vision improve efficiency?
+                        {t("computerVisionFAQsQuestion3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          By automating tasks such as object detection and
-                          recognition, computer vision can significantly reduce
-                          human error, speed up processes, and provide accurate
-                          insights that drive better decision-making.
-                        </p>
+                        <p>{t("computerVisionFAQsAnswer3")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -88,15 +75,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        What are some applications of Computer Vision?
+                        {t("computerVisionFAQsQuestion4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Applications include facial recognition, autonomous
-                          vehicles, image classification, and augmented reality.
-                          These technologies enhance user experiences and enable
-                          new functionalities.
-                        </p>
+                        <p>{t("computerVisionFAQsAnswer4")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -105,15 +87,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        How can DH Solutions help with Computer Vision projects?
+                        {t("computerVisionFAQsQuestion5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          DH Solutions offers comprehensive computer vision services,
-                          from consultation and solution design to implementation
-                          and support, ensuring that your project meets its
-                          objectives efficiently and effectively.
-                        </p>
+                        <p>{t("computerVisionFAQsAnswer5")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>

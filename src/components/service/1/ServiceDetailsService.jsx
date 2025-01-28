@@ -1,8 +1,10 @@
 import ServiceDetail from "../../../../public/assets/imgs/thumb/services-page.svg";
 import Shape6 from "../../../../public/assets/imgs/icon/shape-6.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsService = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="service__detail">
@@ -12,7 +14,7 @@ const ServiceDetailsService = () => {
             <div className="col-xxl-12">
               <div className="sec-title-wrapper">
                 <h2 className="sec-title title-anim">
-                  Your Trusted Partner for Exceptional Front-End Development Services
+                  {t("serviceDetailsServiceHeading")}
                 </h2>
               </div>
             </div>
@@ -40,12 +42,8 @@ const ServiceDetailsService = () => {
                 />
               </div>
               <div className="service__detail-content">
-                <p>
-                  At DH Solutions, we provide front-end development solutions that are tailored to meet your specific needs. Our team ensures that you receive stunning designs and seamless user experiences, all delivered within a few business days.
-                </p>
-                <p>
-                  Our commitment goes beyond just aesthetics, we focus on effectively communicating your brands message. We create engaging and dynamic web applications that connect with your audience across various platforms, elevating your online presence and driving engagement.
-                </p>
+                <p>{t("serviceDetailsServicePara1")}</p>
+                <p>{t("serviceDetailsServicePara2")}</p>
               </div>
             </div>
           </div>

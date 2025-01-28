@@ -1,8 +1,10 @@
 import { Accordion } from "react-bootstrap";
 import ThumbFaq from "../../../../public/assets/imgs/thumb/faq.svg";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const ServiceDetailsFaq = () => {
+  const t = useTranslations();
   return (
     <>
       <section className="faq__area">
@@ -22,9 +24,7 @@ const ServiceDetailsFaq = () => {
             </div>
             <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
               <div className="faq__content">
-                <h2 className="faq__title title-anim">
-                  Quality Assurance and Testing FAQs
-                </h2>
+                <h2 className="faq__title title-anim">{t("QAtestingTitle")}</h2>
 
                 <div className="faq__list">
                   <Accordion
@@ -37,12 +37,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingOne"
                       >
-                        What is Quality Assurance (QA)?
+                        {t("QAtestingQuestion1")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Quality Assurance (QA) is a systematic process designed to determine if the products meet the specified requirements and are free of defects. It focuses on improving and stabilizing production and associated processes to avoid defects.
-                        </p>
+                        <p>{t("QAtestingAnswer1")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -51,12 +49,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingTwo"
                       >
-                        Why is testing important in software development?
+                        {t("QAtestingQuestion2")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Testing is crucial as it helps identify bugs before the software is deployed, ensuring that the final product is reliable and performs as expected. It ultimately enhances user satisfaction and minimizes maintenance costs.
-                        </p>
+                        <p>{t("QAtestingAnswer2")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -65,12 +61,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingThree"
                       >
-                        What types of testing do you offer?
+                        {t("QAtestingQuestion3")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          We offer a range of testing services, including functional testing, performance testing, security testing, usability testing, and automated testing solutions tailored to meet your specific needs.
-                        </p>
+                        <p>{t("QAtestingAnswer3")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -79,12 +73,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFour"
                       >
-                        How do you ensure the quality of your testing?
+                        {t("QAtestingQuestion4")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          We follow a structured testing methodology, leveraging industry best practices, advanced tools, and frameworks. Our experienced QA team conducts thorough testing at each stage of the development process to ensure high-quality deliverables.
-                        </p>
+                        <p>{t("QAtestingAnswer4")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
 
@@ -93,12 +85,10 @@ const ServiceDetailsFaq = () => {
                         className="accordion-header"
                         id="headingFive"
                       >
-                        Can you integrate testing into my existing development process?
+                        {t("QAtestingQuestion5")}
                       </Accordion.Header>
                       <Accordion.Body className="accordion-body">
-                        <p>
-                          Yes, we can seamlessly integrate our testing services into your existing development workflow, ensuring minimal disruption while enhancing the overall quality of your software products.
-                        </p>
+                        <p>{t("QAtestingAnswer5")}</p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>

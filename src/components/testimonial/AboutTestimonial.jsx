@@ -7,8 +7,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import { useTranslations } from "next-intl";
 
 const AboutTestimonial = () => {
+  const t = useTranslations("");
   return (
     <>
       <section className="testimonial__area-2">
@@ -43,18 +45,16 @@ const AboutTestimonial = () => {
                       <div className="testimonial__slide">
                         <div className="testimonial__inner-2">
                           <h2 className="testimonial__title-2">
-                            Transformative Digital Presence
+                            {t("aboutTestimonialHeading")}
                           </h2>
                           <p className="testimonial__text-2">
-                            &quot;DH Solutions completely transformed our
-                            digital presence. They captured our brand&apos;s
-                            essence beautifully, delivering a seamless and
-                            impactful experience for our customers. Truly
-                            impressive work!&quot;
+                            &quot;{t("aboutTestimonialPara")}&quot;
                           </p>
-                          <h3 className="testimonial__author">Alex M.</h3>
+                          <h3 className="testimonial__author">
+                            {t("aboutTestimonialH3")}
+                          </h3>
                           <h4 className="testimonial__role">
-                            CEO of Global Retail Group
+                            {t("aboutTestimonialH4")}
                           </h4>
                         </div>
                       </div>
@@ -64,18 +64,16 @@ const AboutTestimonial = () => {
                       <div className="testimonial__slide">
                         <div className="testimonial__inner-2">
                           <h2 className="testimonial__title-2">
-                            Streamlined Operations & Efficiency
+                            {t("streamedOperatorsHeading")}
                           </h2>
                           <p className="testimonial__text-2">
-                            &quot;Partnering with DH Solutions has been a
-                            game-changer. Their innovative solutions and
-                            attention to detail have streamlined our operations,
-                            improving efficiency across our entire organization.
-                            Highly recommended!&quot;
+                            &quot;{t("streamedOperatorsPara")}&quot;
                           </p>
-                          <h3 className="testimonial__author">Sarah L.</h3>
+                          <h3 className="testimonial__author">
+                            {t("streamedOperatorsName")}
+                          </h3>
                           <h4 className="testimonial__role">
-                            Head of Operations, MENA Distributors
+                            {t("headOfOperationH4")}
                           </h4>
                         </div>
                       </div>
@@ -85,19 +83,17 @@ const AboutTestimonial = () => {
                       <div className="testimonial__slide">
                         <div className="testimonial__inner-2">
                           <h2 className="testimonial__title-2">
-                            Exceptional Service & Quality
+                            {t("expectionalSeviceHeading")}
                           </h2>
                           <p className="testimonial__text-2">
-                            &quot;From day one, DH Solutions offered exceptional
-                            service. They listened closely to our needs and
-                            delivered a robust, user-friendly platform central
-                            to our business. Their commitment to quality is
-                            unmatched.&quot;
+                            &quot;{t("expectionalSevicePara")}&quot;
                           </p>
                           <h3 className="testimonial__author">
-                            Muhammad Ibrahim
+                            {t("expectionalSeviceName")}
                           </h3>
-                          <h4 className="testimonial__role">CEO of SRide</h4>
+                          <h4 className="testimonial__role">
+                            {t("expectionalSeviceH4")}
+                          </h4>
                         </div>
                       </div>
                     </SwiperSlide>

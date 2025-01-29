@@ -4,7 +4,6 @@ import Career3 from "../../../public/assets/imgs/career/3.jpg";
 import Career4 from "../../../public/assets/imgs/career/4.jpg";
 import Career5 from "../../../public/assets/imgs/career/5.jpeg";
 import Image from "next/image";
-import { useTranslations } from "use-intl";
 
 const CareerGallery = () => {
   const t = useTranslations();

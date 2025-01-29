@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 
 const AboutHero = () => {
   const wordAnim = useRef();
-  const t = useTranslations();
 
   useEffect(() => {
     animationWordCome(wordAnim.current);

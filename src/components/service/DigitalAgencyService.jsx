@@ -126,7 +126,7 @@ const DigitalAgencyService = () => {
               <div className="sec-title-wrapper wrap">
                 <h2 className="sec-sub-title title-anim">{t("service")}</h2>
                 <h3 className="sec-title title-anim">
-                  {t("sloutionWeProvideTitle")} <br />
+                  {t("sloutionWeProvideTitle")}
                   {t("sloutionWeProvideTitlePart")}
                 </h3>
               </div>
